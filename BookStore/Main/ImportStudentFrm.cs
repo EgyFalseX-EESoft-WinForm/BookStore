@@ -62,31 +62,23 @@ namespace BookStore
             SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
             SqlCommand cmd = new SqlCommand("", con);
             SqlTransaction trn = null;
+            //Inserting Into Student
             cmd.CommandText = @"IF NOT EXISTS(SELECT stu_code FROM student WHERE stu_code = @org_stu_code)
                                 INSERT INTO dbo.student
                                 ( stu_code ,
-                                  asase_code ,
                                   stu_name ,
-                                  alsofof_code ,
-                                  fasl_code ,
                                   waleaalkamr_mobile ,
                                   entrystore ,
                                   editstore
                                 )
                         VALUES  ( @stu_code , -- stu_code - int
-                                  @asase_code , -- asase_code - int
                                   @stu_name , -- stu_name - nvarchar(50)
-                                  @alsofof_code , -- alsofof_code - int
-                                  @fasl_code , -- fasl_code - int
                                   @waleaalkamr_mobile , -- waleaalkamr_mobile - nvarchar(50)
                                   @entrystore , -- entrystore - bit
                                   @editstore  -- editstore - bit 
                                 )";
             cmd.Parameters.Add("@org_stu_code", System.Data.SqlDbType.Int);
             cmd.Parameters.Add("@stu_code", System.Data.SqlDbType.Int);
-            cmd.Parameters.Add("@asase_code", System.Data.SqlDbType.Int);
-            cmd.Parameters.Add("@stu_name", System.Data.SqlDbType.NVarChar);
-            cmd.Parameters.Add("@alsofof_code", System.Data.SqlDbType.Int);
             cmd.Parameters.Add("@fasl_code", System.Data.SqlDbType.Int);
             cmd.Parameters.Add("@waleaalkamr_mobile", System.Data.SqlDbType.NVarChar);
             cmd.Parameters.Add("@entrystore", System.Data.SqlDbType.Bit);
@@ -101,11 +93,50 @@ namespace BookStore
                 foreach (DataRow row in dt.Rows)
                 {
                     cmd.Parameters["@org_stu_code"].Value = row["stu_code"].ToString();
-
                     cmd.Parameters["@stu_name"].Value = row["stu_name"].ToString();
                     cmd.Parameters["@waleaalkamr_mobile"].Value = row["waleaalkamr_mobile"].ToString();
                     cmd.Parameters["@entrystore"].Value = false;
                     cmd.Parameters["@editstore"].Value = false;
+
+                    if (row["stu_code"].ToString() == string.Empty)
+                        cmd.Parameters["@stu_code"].Value = DBNull.Value;
+                    else
+                        cmd.Parameters["@stu_code"].Value = row["stu_code"].ToString();
+                    cmd.ExecuteNonQuery();
+                    pbc.EditValue = (int)pbc.EditValue + 1;
+                    Application.DoEvents();
+                }
+                trn.Commit();
+                //Inserting Into Student_t
+                cmd.Parameters.Clear();
+                cmd.CommandText = @"IF NOT EXISTS(SELECT stu_code FROM student_t WHERE stu_code = @org_stu_code AND asase_code = @org_asase_code)
+                                INSERT INTO dbo.student_t
+                                ( stu_code ,
+                                  asase_code ,
+                                  alsofof_code ,
+                                  fasl_code
+                                )
+                        VALUES  ( @stu_code , -- stu_code - int
+                                  @asase_code , -- asase_code - int
+                                  @alsofof_code , -- alsofof_code - int
+                                  @fasl_code  -- fasl_code - int
+                                )";
+                cmd.Parameters.Add("@org_stu_code", System.Data.SqlDbType.Int);
+                cmd.Parameters.Add("@org_asase_code", System.Data.SqlDbType.Int);
+                cmd.Parameters.Add("@stu_code", System.Data.SqlDbType.Int);
+                cmd.Parameters.Add("@asase_code", System.Data.SqlDbType.Int);
+                cmd.Parameters.Add("@alsofof_code", System.Data.SqlDbType.Int);
+                cmd.Parameters.Add("@fasl_code", System.Data.SqlDbType.Int);
+
+                con.Open();
+                trn = con.BeginTransaction();
+                cmd.Transaction = trn;
+                pbc.Properties.Maximum = dt.Rows.Count;
+                pbc.Properties.Minimum = 0;
+                foreach (DataRow row in dt.Rows)
+                {
+                    cmd.Parameters["@org_stu_code"].Value = row["stu_code"].ToString();
+                    cmd.Parameters["@org_asase_code"].Value = row["asase_code"].ToString();
 
                     if (row["stu_code"].ToString() == string.Empty)
                         cmd.Parameters["@stu_code"].Value = DBNull.Value;
@@ -123,21 +154,20 @@ namespace BookStore
                         cmd.Parameters["@fasl_code"].Value = DBNull.Value;
                     else
                         cmd.Parameters["@fasl_code"].Value = row["fasl_code"].ToString();
-                    
+
                     cmd.ExecuteNonQuery();
                     pbc.EditValue = (int)pbc.EditValue + 1;
                     Application.DoEvents();
                 }
                 trn.Commit();
-                MessageBox.Show("تم الاستيراد", "معلومات", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                con.Close();
+                pbc.EditValue = 0;
             }
             catch (SqlException ex)
             {
                 trn.Rollback();
                 MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            con.Close();
-            pbc.EditValue = 0;
             
         }
         #endregion

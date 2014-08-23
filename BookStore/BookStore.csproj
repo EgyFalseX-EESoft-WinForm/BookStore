@@ -156,6 +156,7 @@
     <Compile Include="Codes\EditorCDCategoriesFrm.designer.cs">
       <DependentUpon>EditorCDCategoriesFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseScripts.cs" />
     <Compile Include="DataSources\dsBookStore.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -420,6 +421,7 @@
     <Compile Include="Queries\XRepBarCode.Designer.cs">
       <DependentUpon>XRepBarCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="XRep\XRep02.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -454,6 +456,7 @@
     <EmbeddedResource Include="XRep\XRep01.resx">
       <DependentUpon>XRep01.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="DataSources\dsBookStore.xsc">
       <DependentUpon>dsBookStore.xsd</DependentUpon>
     </None>
@@ -613,7 +616,6 @@
     <EmbeddedResource Include="Queries\XRepBarCode.resx">
       <DependentUpon>XRepBarCode.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -227,7 +227,7 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
             DataTable dt = FXFW.SqlDB.LoadDataTable(string.Format(@"SELECT * FROM CDASNAF WHERE SanfID = {0} AND
             (SELECT alsofof_code FROM CDCategories WHERE CategoryId = CDASNAF.CategoryId)
             =
-            (SELECT alsofof_code FROM student WHERE stu_code = {1} AND asase_code = {2})", BookId, studentId, Program.asase_code));
+            (SELECT alsofof_code FROM student_t WHERE stu_code = {1} AND asase_code = {2})", BookId, studentId, Program.asase_code));
             if (dt.Rows.Count != 0)
                 output = true;
             return output;
@@ -557,7 +557,7 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
                 return;
             TasnefTbl = FXFW.SqlDB.LoadDataTable(@"Select distinct [CategoryID],(SELECT Category FROM CDCategories WHERE CategoryId = CDASNAF.CategoryId) AS Category,
             (SELECT alsofof_code FROM CDCategories WHERE CategoryId = CDASNAF.CategoryId) AS alsofof_code From CDASNAF");
-            string alsofof_code = FXFW.SqlDB.LoadDataTable(@"SELECT [alsofof_code] FROM [dbo].[student] WHERE [stu_code] = " + LUEPERSONID.EditValue).Rows[0][0].ToString();
+            string alsofof_code = FXFW.SqlDB.LoadDataTable(@"SELECT [alsofof_code] FROM [dbo].[student_t] WHERE [stu_code] = " + LUEPERSONID.EditValue).Rows[0][0].ToString();
             CBETasnef.Properties.Items.Clear();
             CBETasnef.Text = string.Empty;
             CBETasnef.EditValue = null;
@@ -746,7 +746,7 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
                 report.LblStoreTrIDDAY.Text = StoreTrIDDAY;
                 report.LblStoreTrDate.Text = DEStoreTrDate.Text;
                 report.LblSaf.Text = FXFW.SqlDB.LoadDataTable(String.Format(@"SELECT alsofof_NAME FROM CDalsofof
-                WHERE alsofof_code = (SELECT alsofof_code FROM student WHERE asase_code = {0} AND stu_code = 
+                WHERE alsofof_code = (SELECT alsofof_code FROM student_t WHERE asase_code = {0} AND stu_code = 
                 (SELECT PERSONID FROM TBLStoreTransaction WHERE StoreTrID = {1}) )", Program.asase_code, StoreTrID)).Rows[0][0].ToString() + ")";
                 
                 report.LblPERSONID.Text = LUEPERSONID.Text;
@@ -1022,7 +1022,7 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
             report.LblStoreTrIDDAY.Text = row["StoreTrIDDAY"].ToString();
             report.LblStoreTrDate.Text = DEStoreTrDate.Text;
             DataTable alsofof_NAMETbl = FXFW.SqlDB.LoadDataTable(String.Format(@"SELECT alsofof_NAME FROM CDalsofof
-                WHERE alsofof_code = (SELECT alsofof_code FROM student WHERE asase_code = (Select Max(asase_code) From student) AND stu_code = 
+                WHERE alsofof_code = (SELECT alsofof_code FROM student_t WHERE asase_code = (Select Max(asase_code) From student_t) AND stu_code = 
                 (SELECT PERSONID FROM TBLStoreTransaction WHERE StoreTrID = {0}) )", row["StoreTrID"]));
             if (alsofof_NAMETbl.Rows.Count > 0)
                 report.LblSaf.Text = alsofof_NAMETbl.Rows[0][0].ToString();

@@ -34,8 +34,8 @@ namespace BookStore
         }
         private void LoadGrid()
         {
-            gridControlData.DataSource = FXFW.SqlDB.LoadDataTable(@"SELECT stu_code, asase_code, stu_name, alsofof_code, fasl_code, waleaalkamr_mobile, entrystore, editstore, 
-                                                              stu_code AS org_stu_code, asase_code AS org_asase_code FROM student");
+            gridControlData.DataSource = FXFW.SqlDB.LoadDataTable(@"SELECT stu_code, stu_name, waleaalkamr_mobile, entrystore, editstore, 
+                                                              stu_code AS org_stu_code FROM student");
         }
         private void ActiveKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -61,7 +61,8 @@ namespace BookStore
                     break;
             }
         }
-#endregion
+
+        #endregion
         #region - Event Handlers -
         private void stu_nashatFrm_Load(object sender, EventArgs e)
         {
@@ -77,10 +78,7 @@ namespace BookStore
             try
             {
                 cmd.Parameters.Add("@stu_code", System.Data.SqlDbType.Int);
-                cmd.Parameters.Add("@asase_code", System.Data.SqlDbType.Int);
                 cmd.Parameters.Add("@stu_name", System.Data.SqlDbType.NVarChar);
-                cmd.Parameters.Add("@alsofof_code", System.Data.SqlDbType.Int);
-                cmd.Parameters.Add("@fasl_code", System.Data.SqlDbType.Int);
                 cmd.Parameters.Add("@waleaalkamr_mobile", System.Data.SqlDbType.NVarChar);
                 
 
@@ -88,19 +86,13 @@ namespace BookStore
                 {
                     cmd.CommandText = @"INSERT INTO dbo.student
                                         ( stu_code ,
-                                          asase_code ,
                                           stu_name ,
-                                          alsofof_code ,
-                                          fasl_code ,
                                           waleaalkamr_mobile ,
                                           entrystore ,
                                           editstore
                                         )
                                 VALUES  ( @stu_code , -- stu_code - int
-                                          @asase_code , -- asase_code - int
                                           @stu_name , -- stu_name - nvarchar(50)
-                                          @alsofof_code , -- alsofof_code - int
-                                          @fasl_code , -- fasl_code - int
                                           @waleaalkamr_mobile , -- waleaalkamr_mobile - nvarchar(50)
                                           @entrystore , -- entrystore - bit
                                           @editstore  -- editstore - bit 
@@ -118,10 +110,7 @@ namespace BookStore
                 {
                     cmd.CommandText = @"UPDATE student SET
 			                                        stu_code = @stu_code,	-- stu_code - int
-			                                        asase_code = @asase_code,	-- asase_code - int
 			                                        stu_name = @stu_name,	-- stu_name - nvarchar(50)
-			                                        alsofof_code = @alsofof_code,	-- alsofof_code - int
-			                                        fasl_code = @fasl_code,	-- fasl_code - int
 			                                        waleaalkamr_mobile = @waleaalkamr_mobile,	-- waleaalkamr_mobile - nvarchar(50)
 			                                        editstore = @editstore	-- editstore - bit
                                         WHERE stu_code = @org_stu_code	-- @org_stu_code - int";
@@ -136,18 +125,6 @@ namespace BookStore
                 }
                 cmd.Parameters["@stu_name"].Value = row["stu_name"].ToString();
                 cmd.Parameters["@waleaalkamr_mobile"].Value = row["waleaalkamr_mobile"].ToString();
-                if (row["asase_code"].ToString() == string.Empty)
-                    cmd.Parameters["@asase_code"].Value = DBNull.Value;
-                else
-                    cmd.Parameters["@asase_code"].Value = row["asase_code"].ToString();
-                if (row["alsofof_code"].ToString() == string.Empty)
-                    cmd.Parameters["@alsofof_code"].Value = DBNull.Value;
-                else
-                    cmd.Parameters["@alsofof_code"].Value = row["alsofof_code"].ToString();
-                if (row["fasl_code"].ToString() == string.Empty)
-                    cmd.Parameters["@fasl_code"].Value = DBNull.Value;
-                else
-                    cmd.Parameters["@fasl_code"].Value = row["fasl_code"].ToString();
 
                 con.Open();
                 cmd.ExecuteNonQuery();

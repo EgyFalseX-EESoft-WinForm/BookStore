@@ -43,6 +43,7 @@ namespace BookStore
                 //FXFW.SqlDB.LoadSQLReports();
                 LoadAppSetting();
                 asase_code = (int)new DataSources.dsBookStoreQueriesTableAdapters.CD_AsaseTableAdapter().ScalarQueryCurrentCode();
+                DatabaseScripts.FireScript();
                 Application.Run(new BookStoreMainFrm());
             }
         }
@@ -224,8 +225,10 @@ namespace BookStore
         }
         private static void LoadAppSetting()
         {
-            Properties.Settings.Default["schoolStoreConnectionString"] = FXFW.SqlDB.SqlConStr;
-            Properties.Settings.Default.Save();
+            BookStore.Properties.Settings.Default["schoolStoreConnectionString"] = FXFW.SqlDB.SqlConStr;
+            
+            //Properties.Settings.Default.Save();
         }
+
     }
 }
