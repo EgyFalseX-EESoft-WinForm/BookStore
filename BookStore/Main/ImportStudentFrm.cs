@@ -79,7 +79,7 @@ namespace BookStore
                                 )";
             cmd.Parameters.Add("@org_stu_code", System.Data.SqlDbType.Int);
             cmd.Parameters.Add("@stu_code", System.Data.SqlDbType.Int);
-            cmd.Parameters.Add("@fasl_code", System.Data.SqlDbType.Int);
+            cmd.Parameters.Add("@stu_name", System.Data.SqlDbType.NVarChar);
             cmd.Parameters.Add("@waleaalkamr_mobile", System.Data.SqlDbType.NVarChar);
             cmd.Parameters.Add("@entrystore", System.Data.SqlDbType.Bit);
             cmd.Parameters.Add("@editstore", System.Data.SqlDbType.Bit);
@@ -90,6 +90,7 @@ namespace BookStore
                 cmd.Transaction = trn;
                 pbc.Properties.Maximum = dt.Rows.Count;
                 pbc.Properties.Minimum = 0;
+                pbc.EditValue = 0;
                 foreach (DataRow row in dt.Rows)
                 {
                     cmd.Parameters["@org_stu_code"].Value = row["stu_code"].ToString();
@@ -106,7 +107,7 @@ namespace BookStore
                     pbc.EditValue = (int)pbc.EditValue + 1;
                     Application.DoEvents();
                 }
-                trn.Commit();
+                //trn.Commit();
                 //Inserting Into Student_t
                 cmd.Parameters.Clear();
                 cmd.CommandText = @"IF NOT EXISTS(SELECT stu_code FROM student_t WHERE stu_code = @org_stu_code AND asase_code = @org_asase_code)
@@ -128,11 +129,9 @@ namespace BookStore
                 cmd.Parameters.Add("@alsofof_code", System.Data.SqlDbType.Int);
                 cmd.Parameters.Add("@fasl_code", System.Data.SqlDbType.Int);
 
-                con.Open();
-                trn = con.BeginTransaction();
-                cmd.Transaction = trn;
                 pbc.Properties.Maximum = dt.Rows.Count;
                 pbc.Properties.Minimum = 0;
+                pbc.EditValue = 0;
                 foreach (DataRow row in dt.Rows)
                 {
                     cmd.Parameters["@org_stu_code"].Value = row["stu_code"].ToString();
@@ -162,6 +161,7 @@ namespace BookStore
                 trn.Commit();
                 con.Close();
                 pbc.EditValue = 0;
+                MessageBox.Show("تم الاستيراد بنجاح", "تمت العمليه", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (SqlException ex)
             {
