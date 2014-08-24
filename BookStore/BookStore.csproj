@@ -245,6 +245,12 @@
     <Compile Include="Main\schoolStoreMainFrm.Designer.cs">
       <DependentUpon>schoolStoreMainFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Queries\Qrysp_StudentBooksRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Queries\Qrysp_StudentBooksRequests.designer.cs">
+      <DependentUpon>Qrysp_StudentBooksRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Queries\Qry01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -447,6 +453,9 @@
       <DependentUpon>EditorCDCategoriesFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Queries\Qrysp_StudentBooksRequests.resx">
+      <DependentUpon>Qrysp_StudentBooksRequests.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Queries\Qry01.resx">
       <DependentUpon>Qry01.cs</DependentUpon>
     </EmbeddedResource>

@@ -848,6 +848,11 @@ namespace BookStore
             Qry01 FrmData = new Qry01() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(global::BookStore.Properties.Resources.Qry, 16, false) };
             FrmData.Show();
         }
+        private void qryspStudentBooksRequestsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Qrysp_StudentBooksRequests FrmData = new Qrysp_StudentBooksRequests() { MdiParent = this, Icon = FXFW.SqlDB.MakeIcon(global::BookStore.Properties.Resources.Qry, 16, false) };
+            FrmData.Show();
+        }
         private void skinsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (FrmSkins.IsDisposed)
@@ -1148,6 +1153,8 @@ namespace BookStore
         }
 
         #endregion
+
+        
 
     }
 }

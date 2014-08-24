@@ -35,19 +35,20 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlMain
             // 
-            this.gridControlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControlMain.Location = new System.Drawing.Point(12, 12);
+            this.gridControlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlMain.Location = new System.Drawing.Point(12, 41);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
-            this.gridControlMain.Size = new System.Drawing.Size(710, 338);
+            this.gridControlMain.Size = new System.Drawing.Size(710, 309);
             this.gridControlMain.TabIndex = 6;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
@@ -129,11 +130,21 @@
             this.gridColumn5.VisibleIndex = 0;
             this.gridColumn5.Width = 83;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(595, 12);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(127, 23);
+            this.btnPrint.TabIndex = 7;
+            this.btnPrint.Text = "طباعة";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // ItemAvailabilityFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 362);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.gridControlMain);
             this.Name = "ItemAvailabilityFrm";
             this.Text = "الاصناف في المخزن";
@@ -153,5 +164,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
     }
 }

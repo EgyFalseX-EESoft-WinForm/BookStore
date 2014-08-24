@@ -42,6 +42,8 @@ namespace BookStore.DataSources {
         
         private Qry01DataTable tableQry01;
         
+        private sp_StudentBooksRequestsDataTable tablesp_StudentBooksRequests;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -96,6 +98,9 @@ namespace BookStore.DataSources {
                 }
                 if ((ds.Tables["Qry01"] != null)) {
                     base.Tables.Add(new Qry01DataTable(ds.Tables["Qry01"]));
+                }
+                if ((ds.Tables["sp_StudentBooksRequests"] != null)) {
+                    base.Tables.Add(new sp_StudentBooksRequestsDataTable(ds.Tables["sp_StudentBooksRequests"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -207,6 +212,16 @@ namespace BookStore.DataSources {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public sp_StudentBooksRequestsDataTable sp_StudentBooksRequests {
+            get {
+                return this.tablesp_StudentBooksRequests;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -299,6 +314,9 @@ namespace BookStore.DataSources {
                 if ((ds.Tables["Qry01"] != null)) {
                     base.Tables.Add(new Qry01DataTable(ds.Tables["Qry01"]));
                 }
+                if ((ds.Tables["sp_StudentBooksRequests"] != null)) {
+                    base.Tables.Add(new sp_StudentBooksRequestsDataTable(ds.Tables["sp_StudentBooksRequests"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -386,6 +404,12 @@ namespace BookStore.DataSources {
                     this.tableQry01.InitVars();
                 }
             }
+            this.tablesp_StudentBooksRequests = ((sp_StudentBooksRequestsDataTable)(base.Tables["sp_StudentBooksRequests"]));
+            if ((initTable == true)) {
+                if ((this.tablesp_StudentBooksRequests != null)) {
+                    this.tablesp_StudentBooksRequests.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,6 +438,8 @@ namespace BookStore.DataSources {
             base.Tables.Add(this.tableCDCategories);
             this.tableQry01 = new Qry01DataTable();
             base.Tables.Add(this.tableQry01);
+            this.tablesp_StudentBooksRequests = new sp_StudentBooksRequestsDataTable();
+            base.Tables.Add(this.tablesp_StudentBooksRequests);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -467,6 +493,12 @@ namespace BookStore.DataSources {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeQry01() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializesp_StudentBooksRequests() {
             return false;
         }
         
@@ -551,6 +583,9 @@ namespace BookStore.DataSources {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void Qry01RowChangeEventHandler(object sender, Qry01RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void sp_StudentBooksRequestsRowChangeEventHandler(object sender, sp_StudentBooksRequestsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1843,6 +1878,10 @@ namespace BookStore.DataSources {
             
             private global::System.Data.DataColumn columnstu_name;
             
+            private global::System.Data.DataColumn columnalsofof_NAME;
+            
+            private global::System.Data.DataColumn columnfasl_name;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public studentDataTable() {
@@ -1894,6 +1933,22 @@ namespace BookStore.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn alsofof_NAMEColumn {
+                get {
+                    return this.columnalsofof_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fasl_nameColumn {
+                get {
+                    return this.columnfasl_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1929,11 +1984,13 @@ namespace BookStore.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public studentRow AddstudentRow(int stu_code, string stu_name) {
+            public studentRow AddstudentRow(int stu_code, string stu_name, string alsofof_NAME, string fasl_name) {
                 studentRow rowstudentRow = ((studentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         stu_code,
-                        stu_name};
+                        stu_name,
+                        alsofof_NAME,
+                        fasl_name};
                 rowstudentRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstudentRow);
                 return rowstudentRow;
@@ -1958,6 +2015,8 @@ namespace BookStore.DataSources {
             internal void InitVars() {
                 this.columnstu_code = base.Columns["stu_code"];
                 this.columnstu_name = base.Columns["stu_name"];
+                this.columnalsofof_NAME = base.Columns["alsofof_NAME"];
+                this.columnfasl_name = base.Columns["fasl_name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1967,8 +2026,14 @@ namespace BookStore.DataSources {
                 base.Columns.Add(this.columnstu_code);
                 this.columnstu_name = new global::System.Data.DataColumn("stu_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstu_name);
+                this.columnalsofof_NAME = new global::System.Data.DataColumn("alsofof_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnalsofof_NAME);
+                this.columnfasl_name = new global::System.Data.DataColumn("fasl_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfasl_name);
                 this.columnstu_code.AllowDBNull = false;
                 this.columnstu_name.MaxLength = 50;
+                this.columnalsofof_NAME.MaxLength = 50;
+                this.columnfasl_name.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3221,6 +3286,388 @@ namespace BookStore.DataSources {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class sp_StudentBooksRequestsDataTable : global::System.Data.TypedTableBase<sp_StudentBooksRequestsRow> {
+            
+            private global::System.Data.DataColumn columnstu_code;
+            
+            private global::System.Data.DataColumn columnalsofof_code;
+            
+            private global::System.Data.DataColumn columnfasl_code;
+            
+            private global::System.Data.DataColumn columnstu_name;
+            
+            private global::System.Data.DataColumn columnwaleaalkamr_mobile;
+            
+            private global::System.Data.DataColumn columnalsofof_NAME;
+            
+            private global::System.Data.DataColumn columnfasl_name;
+            
+            private global::System.Data.DataColumn columnSanfID;
+            
+            private global::System.Data.DataColumn columnSanfName;
+            
+            private global::System.Data.DataColumn columnRequest;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_StudentBooksRequestsDataTable() {
+                this.TableName = "sp_StudentBooksRequests";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal sp_StudentBooksRequestsDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected sp_StudentBooksRequestsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn stu_codeColumn {
+                get {
+                    return this.columnstu_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn alsofof_codeColumn {
+                get {
+                    return this.columnalsofof_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fasl_codeColumn {
+                get {
+                    return this.columnfasl_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn stu_nameColumn {
+                get {
+                    return this.columnstu_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn waleaalkamr_mobileColumn {
+                get {
+                    return this.columnwaleaalkamr_mobile;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn alsofof_NAMEColumn {
+                get {
+                    return this.columnalsofof_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fasl_nameColumn {
+                get {
+                    return this.columnfasl_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SanfIDColumn {
+                get {
+                    return this.columnSanfID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SanfNameColumn {
+                get {
+                    return this.columnSanfName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RequestColumn {
+                get {
+                    return this.columnRequest;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_StudentBooksRequestsRow this[int index] {
+                get {
+                    return ((sp_StudentBooksRequestsRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event sp_StudentBooksRequestsRowChangeEventHandler sp_StudentBooksRequestsRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event sp_StudentBooksRequestsRowChangeEventHandler sp_StudentBooksRequestsRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event sp_StudentBooksRequestsRowChangeEventHandler sp_StudentBooksRequestsRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event sp_StudentBooksRequestsRowChangeEventHandler sp_StudentBooksRequestsRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addsp_StudentBooksRequestsRow(sp_StudentBooksRequestsRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_StudentBooksRequestsRow Addsp_StudentBooksRequestsRow(int stu_code, int alsofof_code, int fasl_code, string stu_name, string waleaalkamr_mobile, string alsofof_NAME, string fasl_name, int SanfID, string SanfName, string Request) {
+                sp_StudentBooksRequestsRow rowsp_StudentBooksRequestsRow = ((sp_StudentBooksRequestsRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        stu_code,
+                        alsofof_code,
+                        fasl_code,
+                        stu_name,
+                        waleaalkamr_mobile,
+                        alsofof_NAME,
+                        fasl_name,
+                        SanfID,
+                        SanfName,
+                        Request};
+                rowsp_StudentBooksRequestsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowsp_StudentBooksRequestsRow);
+                return rowsp_StudentBooksRequestsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                sp_StudentBooksRequestsDataTable cln = ((sp_StudentBooksRequestsDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new sp_StudentBooksRequestsDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnstu_code = base.Columns["stu_code"];
+                this.columnalsofof_code = base.Columns["alsofof_code"];
+                this.columnfasl_code = base.Columns["fasl_code"];
+                this.columnstu_name = base.Columns["stu_name"];
+                this.columnwaleaalkamr_mobile = base.Columns["waleaalkamr_mobile"];
+                this.columnalsofof_NAME = base.Columns["alsofof_NAME"];
+                this.columnfasl_name = base.Columns["fasl_name"];
+                this.columnSanfID = base.Columns["SanfID"];
+                this.columnSanfName = base.Columns["SanfName"];
+                this.columnRequest = base.Columns["Request"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnstu_code = new global::System.Data.DataColumn("stu_code", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstu_code);
+                this.columnalsofof_code = new global::System.Data.DataColumn("alsofof_code", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnalsofof_code);
+                this.columnfasl_code = new global::System.Data.DataColumn("fasl_code", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfasl_code);
+                this.columnstu_name = new global::System.Data.DataColumn("stu_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstu_name);
+                this.columnwaleaalkamr_mobile = new global::System.Data.DataColumn("waleaalkamr_mobile", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwaleaalkamr_mobile);
+                this.columnalsofof_NAME = new global::System.Data.DataColumn("alsofof_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnalsofof_NAME);
+                this.columnfasl_name = new global::System.Data.DataColumn("fasl_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfasl_name);
+                this.columnSanfID = new global::System.Data.DataColumn("SanfID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSanfID);
+                this.columnSanfName = new global::System.Data.DataColumn("SanfName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSanfName);
+                this.columnRequest = new global::System.Data.DataColumn("Request", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRequest);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnstu_code,
+                                this.columnSanfID}, false));
+                this.columnstu_name.MaxLength = 100;
+                this.columnwaleaalkamr_mobile.MaxLength = 100;
+                this.columnalsofof_NAME.MaxLength = 100;
+                this.columnfasl_name.MaxLength = 100;
+                this.columnSanfName.MaxLength = 100;
+                this.columnRequest.MaxLength = 100;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_StudentBooksRequestsRow Newsp_StudentBooksRequestsRow() {
+                return ((sp_StudentBooksRequestsRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new sp_StudentBooksRequestsRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(sp_StudentBooksRequestsRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.sp_StudentBooksRequestsRowChanged != null)) {
+                    this.sp_StudentBooksRequestsRowChanged(this, new sp_StudentBooksRequestsRowChangeEvent(((sp_StudentBooksRequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.sp_StudentBooksRequestsRowChanging != null)) {
+                    this.sp_StudentBooksRequestsRowChanging(this, new sp_StudentBooksRequestsRowChangeEvent(((sp_StudentBooksRequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.sp_StudentBooksRequestsRowDeleted != null)) {
+                    this.sp_StudentBooksRequestsRowDeleted(this, new sp_StudentBooksRequestsRowChangeEvent(((sp_StudentBooksRequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.sp_StudentBooksRequestsRowDeleting != null)) {
+                    this.sp_StudentBooksRequestsRowDeleting(this, new sp_StudentBooksRequestsRowChangeEvent(((sp_StudentBooksRequestsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removesp_StudentBooksRequestsRow(sp_StudentBooksRequestsRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsBookStoreQueries ds = new dsBookStoreQueries();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "sp_StudentBooksRequestsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CDCompanyRow : global::System.Data.DataRow {
@@ -3809,6 +4256,38 @@ namespace BookStore.DataSources {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string alsofof_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tablestudent.alsofof_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'alsofof_NAME\' in table \'student\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestudent.alsofof_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fasl_name {
+                get {
+                    try {
+                        return ((string)(this[this.tablestudent.fasl_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fasl_name\' in table \'student\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestudent.fasl_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isstu_nameNull() {
                 return this.IsNull(this.tablestudent.stu_nameColumn);
             }
@@ -3817,6 +4296,30 @@ namespace BookStore.DataSources {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setstu_nameNull() {
                 this[this.tablestudent.stu_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isalsofof_NAMENull() {
+                return this.IsNull(this.tablestudent.alsofof_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setalsofof_NAMENull() {
+                this[this.tablestudent.alsofof_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfasl_nameNull() {
+                return this.IsNull(this.tablestudent.fasl_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfasl_nameNull() {
+                this[this.tablestudent.fasl_nameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4100,6 +4603,304 @@ namespace BookStore.DataSources {
                 set {
                     this[this.tableQry01.SanfNameColumn] = value;
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class sp_StudentBooksRequestsRow : global::System.Data.DataRow {
+            
+            private sp_StudentBooksRequestsDataTable tablesp_StudentBooksRequests;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal sp_StudentBooksRequestsRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablesp_StudentBooksRequests = ((sp_StudentBooksRequestsDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int stu_code {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_StudentBooksRequests.stu_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'stu_code\' in table \'sp_StudentBooksRequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_StudentBooksRequests.stu_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int alsofof_code {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_StudentBooksRequests.alsofof_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'alsofof_code\' in table \'sp_StudentBooksRequests\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_StudentBooksRequests.alsofof_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int fasl_code {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_StudentBooksRequests.fasl_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fasl_code\' in table \'sp_StudentBooksRequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_StudentBooksRequests.fasl_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string stu_name {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_StudentBooksRequests.stu_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'stu_name\' in table \'sp_StudentBooksRequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_StudentBooksRequests.stu_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string waleaalkamr_mobile {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_StudentBooksRequests.waleaalkamr_mobileColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'waleaalkamr_mobile\' in table \'sp_StudentBooksRequests\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_StudentBooksRequests.waleaalkamr_mobileColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string alsofof_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_StudentBooksRequests.alsofof_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'alsofof_NAME\' in table \'sp_StudentBooksRequests\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_StudentBooksRequests.alsofof_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string fasl_name {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_StudentBooksRequests.fasl_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fasl_name\' in table \'sp_StudentBooksRequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_StudentBooksRequests.fasl_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int SanfID {
+                get {
+                    try {
+                        return ((int)(this[this.tablesp_StudentBooksRequests.SanfIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SanfID\' in table \'sp_StudentBooksRequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_StudentBooksRequests.SanfIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SanfName {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_StudentBooksRequests.SanfNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SanfName\' in table \'sp_StudentBooksRequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_StudentBooksRequests.SanfNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Request {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_StudentBooksRequests.RequestColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Request\' in table \'sp_StudentBooksRequests\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_StudentBooksRequests.RequestColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isstu_codeNull() {
+                return this.IsNull(this.tablesp_StudentBooksRequests.stu_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setstu_codeNull() {
+                this[this.tablesp_StudentBooksRequests.stu_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isalsofof_codeNull() {
+                return this.IsNull(this.tablesp_StudentBooksRequests.alsofof_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setalsofof_codeNull() {
+                this[this.tablesp_StudentBooksRequests.alsofof_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfasl_codeNull() {
+                return this.IsNull(this.tablesp_StudentBooksRequests.fasl_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfasl_codeNull() {
+                this[this.tablesp_StudentBooksRequests.fasl_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isstu_nameNull() {
+                return this.IsNull(this.tablesp_StudentBooksRequests.stu_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setstu_nameNull() {
+                this[this.tablesp_StudentBooksRequests.stu_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iswaleaalkamr_mobileNull() {
+                return this.IsNull(this.tablesp_StudentBooksRequests.waleaalkamr_mobileColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setwaleaalkamr_mobileNull() {
+                this[this.tablesp_StudentBooksRequests.waleaalkamr_mobileColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isalsofof_NAMENull() {
+                return this.IsNull(this.tablesp_StudentBooksRequests.alsofof_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setalsofof_NAMENull() {
+                this[this.tablesp_StudentBooksRequests.alsofof_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfasl_nameNull() {
+                return this.IsNull(this.tablesp_StudentBooksRequests.fasl_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfasl_nameNull() {
+                this[this.tablesp_StudentBooksRequests.fasl_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSanfIDNull() {
+                return this.IsNull(this.tablesp_StudentBooksRequests.SanfIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSanfIDNull() {
+                this[this.tablesp_StudentBooksRequests.SanfIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSanfNameNull() {
+                return this.IsNull(this.tablesp_StudentBooksRequests.SanfNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSanfNameNull() {
+                this[this.tablesp_StudentBooksRequests.SanfNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRequestNull() {
+                return this.IsNull(this.tablesp_StudentBooksRequests.RequestColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRequestNull() {
+                this[this.tablesp_StudentBooksRequests.RequestColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4395,6 +5196,40 @@ namespace BookStore.DataSources {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Qry01Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class sp_StudentBooksRequestsRowChangeEvent : global::System.EventArgs {
+            
+            private sp_StudentBooksRequestsRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_StudentBooksRequestsRowChangeEvent(sp_StudentBooksRequestsRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public sp_StudentBooksRequestsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5481,6 +6316,8 @@ SELECT CompanyID, Company, CompanyOfficial, CompanyAddess, CompanyTel, CompanyMo
             tableMapping.DataSetTable = "student";
             tableMapping.ColumnMappings.Add("stu_code", "stu_code");
             tableMapping.ColumnMappings.Add("stu_name", "stu_name");
+            tableMapping.ColumnMappings.Add("alsofof_NAME", "alsofof_NAME");
+            tableMapping.ColumnMappings.Add("fasl_name", "fasl_name");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -5497,7 +6334,8 @@ SELECT CompanyID, Company, CompanyOfficial, CompanyAddess, CompanyTel, CompanyMo
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        stu_code, stu_name\r\nFROM            v_Student";
+            this._commandCollection[0].CommandText = "SELECT        stu_code, stu_name, alsofof_NAME, fasl_name\r\nFROM            v_stud" +
+                "ent";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -5508,7 +6346,8 @@ SELECT CompanyID, Company, CompanyOfficial, CompanyAddess, CompanyTel, CompanyMo
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@alsofof_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "alsofof_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT stu_code, stu_name FROM v_Student WHERE (asase_code = @asase_code)";
+            this._commandCollection[2].CommandText = "SELECT alsofof_NAME, fasl_name, stu_code, stu_name FROM v_student WHERE (asase_co" +
+                "de = @asase_code)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@asase_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "asase_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -6363,6 +7202,196 @@ AND NOT EXISTS (SELECT SanfID FROM StoreTransactionDetailes WHERE SanfID = CDASN
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CategoryID));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(PERSONID));
             dsBookStoreQueries.Qry01DataTable dataTable = new dsBookStoreQueries.Qry01DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class sp_StudentBooksRequestsTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public sp_StudentBooksRequestsTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "sp_StudentBooksRequests";
+            tableMapping.ColumnMappings.Add("stu_code", "stu_code");
+            tableMapping.ColumnMappings.Add("alsofof_code", "alsofof_code");
+            tableMapping.ColumnMappings.Add("fasl_code", "fasl_code");
+            tableMapping.ColumnMappings.Add("stu_name", "stu_name");
+            tableMapping.ColumnMappings.Add("waleaalkamr_mobile", "waleaalkamr_mobile");
+            tableMapping.ColumnMappings.Add("alsofof_NAME", "alsofof_NAME");
+            tableMapping.ColumnMappings.Add("fasl_name", "fasl_name");
+            tableMapping.ColumnMappings.Add("SanfID", "SanfID");
+            tableMapping.ColumnMappings.Add("SanfName", "SanfName");
+            tableMapping.ColumnMappings.Add("Request", "Request");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::BookStore.Properties.Settings.Default.schoolStoreConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.sp_StudentBooksRequests";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@asase_code", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsBookStoreQueries.sp_StudentBooksRequestsDataTable dataTable, global::System.Nullable<int> asase_code) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((asase_code.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(asase_code.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsBookStoreQueries.sp_StudentBooksRequestsDataTable GetData(global::System.Nullable<int> asase_code) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((asase_code.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(asase_code.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            dsBookStoreQueries.sp_StudentBooksRequestsDataTable dataTable = new dsBookStoreQueries.sp_StudentBooksRequestsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

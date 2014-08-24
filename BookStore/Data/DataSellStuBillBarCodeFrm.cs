@@ -557,7 +557,7 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
                 return;
             TasnefTbl = FXFW.SqlDB.LoadDataTable(@"Select distinct [CategoryID],(SELECT Category FROM CDCategories WHERE CategoryId = CDASNAF.CategoryId) AS Category,
             (SELECT alsofof_code FROM CDCategories WHERE CategoryId = CDASNAF.CategoryId) AS alsofof_code From CDASNAF");
-            string alsofof_code = FXFW.SqlDB.LoadDataTable(@"SELECT [alsofof_code] FROM [dbo].[student_t] WHERE [stu_code] = " + LUEPERSONID.EditValue).Rows[0][0].ToString();
+            string alsofof_code = FXFW.SqlDB.LoadDataTable(string.Format(@"SELECT [alsofof_code] FROM [dbo].[student_t] WHERE [stu_code] = {0} AND asase_code = {1}", LUEPERSONID.EditValue, Program.asase_code)).Rows[0][0].ToString();
             CBETasnef.Properties.Items.Clear();
             CBETasnef.Text = string.Empty;
             CBETasnef.EditValue = null;

@@ -37,5 +37,10 @@ namespace BookStore
             LoadGrid();
         }
         #endregion         #region -   Variables   -
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            gridControlMain.ShowRibbonPrintPreview();
+        }
     }
 }
