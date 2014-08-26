@@ -10,26 +10,28 @@ using DevExpress.XtraEditors.Controls;
 
 namespace BookStore.XRep
 {
-    public partial class XRep02 : DevExpress.XtraReports.UI.XtraReport
+    public partial class XRep03 : DevExpress.XtraReports.UI.XtraReport
     {
-        public XRep02()
+        public XRep03()
         {
             InitializeComponent();
         }
         private void XRep02_ParametersRequestSubmit(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
         {
             cDCompanyTableAdapter.Fill(dsBookStoreQueries1.CDCompany);
-            xRep02TableAdapter.Fill(dsBookStoreQueries1.XRep02, Convert.ToInt32(e.ParametersInformation[0].Parameter.Value), Program.asase_code);
+            xRep03TableAdapter.Fill(dsBookStoreQueries1.XRep03, Convert.ToInt32(e.ParametersInformation[0].Parameter.Value), Program.asase_code);
             LookUpEdit lue = (LookUpEdit)e.ParametersInformation[0].Editor;
             DataSources.dsBookStoreQueries.studentRow row = (DataSources.dsBookStoreQueries.studentRow)((DataRowView)lue.GetSelectedDataRow()).Row;
             xrlStudent.Text = row["stu_name"].ToString();
             xrlSaf.Text = row["alsofof_NAME"].ToString();
             xrlFasl.Text = row["fasl_name"].ToString();
+            xrlAsaseName.Text = new DataSources.dsBookStoreQueriesTableAdapters.QueriesTableAdapter().Getasase_year(Program.asase_code);
             if (dsBookStoreQueries1.CDCompany.Rows[0]["Logo"] != null)
             {
                 System.IO.MemoryStream ms = new System.IO.MemoryStream((byte[])dsBookStoreQueries1.CDCompany.Rows[0]["Logo"]);
                 xrPicLogo.Image = Image.FromStream(ms);
             }
+            
         }
 
        

@@ -1151,8 +1151,15 @@ namespace BookStore
             XRep.XRep02 frm = new XRep.XRep02();
             Program.ShowPrintPreview(frm);
         }
+        private void xRep03ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            XRep.XRep03 frm = new XRep.XRep03();
+            Program.ShowPrintPreview(frm);
+        }
+
 
         #endregion
+
 
         
 

@@ -428,6 +428,12 @@
       <DependentUpon>XRepBarCode.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="XRep\XRep03.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep03.Designer.cs">
+      <DependentUpon>XRep03.cs</DependentUpon>
+    </Compile>
     <Compile Include="XRep\XRep02.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -458,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Queries\Qry01.resx">
       <DependentUpon>Qry01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRep\XRep03.resx">
+      <DependentUpon>XRep03.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XRep\XRep02.resx">
       <DependentUpon>XRep02.cs</DependentUpon>

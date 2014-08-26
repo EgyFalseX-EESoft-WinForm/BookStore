@@ -457,6 +457,7 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
         {
              if (CBETasnef.SelectedIndex == -1)
                 return;
+             string msg = string.Empty;
 
              DataTable Asnaf = FXFW.SqlDB.LoadDataTable(@"Select SanfID, SanfName, Sanfbarcode From CDASNAF Where CategoryID = " + TasnefTbl.Rows[CBETasnef.SelectedIndex]["CategoryID"]);
             try
@@ -474,7 +475,8 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
                     {
                         if (ItemAvailability(row["SanfID"].ToString(), row["Quantity"].ToString()) == false)
                         {
-                            Program.msg("لا يوجد كميه كافيه في المخزن للصنف " + item["SanfName"], true, "", this);
+                            //Program.msg("لا يوجد كميه كافيه في المخزن للصنف " + item["SanfName"], true, "", this);
+                            msg += item["SanfName"] + Environment.NewLine;
                             continue;
                         }
                     }
@@ -484,6 +486,10 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
                         continue;
                     }
                     ItemDetials.Rows.Add(row);
+                }
+                if (msg != string.Empty)
+                {
+                    Program.msg("لا يوجد كميه كافيه في المخزن للصنف " + Environment.NewLine + msg, true, "", this);
                 }
                 GridControlAddDetials.DataSource = ItemDetials;
                 ShowTotal();
