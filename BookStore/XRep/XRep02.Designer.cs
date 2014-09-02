@@ -45,6 +45,7 @@
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlStudent = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.xrPicLogo = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlFasl = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
@@ -61,7 +62,6 @@
             this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xRep02TableAdapter = new BookStore.DataSources.dsBookStoreQueriesTableAdapters.XRep02TableAdapter();
             this.pramPERSONID = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrPicLogo = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dsBookStoreQueries1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
@@ -233,6 +233,13 @@
             this.ReportHeader.HeightF = 139.5833F;
             this.ReportHeader.Name = "ReportHeader";
             // 
+            // xrPicLogo
+            // 
+            this.xrPicLogo.LocationFloat = new DevExpress.Utils.PointFloat(8.333298F, 10F);
+            this.xrPicLogo.Name = "xrPicLogo";
+            this.xrPicLogo.SizeF = new System.Drawing.SizeF(106.25F, 92.41664F);
+            this.xrPicLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
+            // 
             // xrLabel12
             // 
             this.xrLabel12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
@@ -298,7 +305,7 @@
             this.xrLabel8.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "CDCompany.CompanyTel")});
             this.xrLabel8.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(397.9167F, 46F);
+            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(397.9167F, 22.99999F);
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel8.SizeF = new System.Drawing.SizeF(252.0833F, 23F);
@@ -312,7 +319,7 @@
             this.xrLabel7.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "CDCompany.CompanyAddess")});
             this.xrLabel7.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(397.9167F, 23F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(397.9167F, 0F);
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel7.SizeF = new System.Drawing.SizeF(252.0833F, 23F);
@@ -326,7 +333,7 @@
             this.xrLabel6.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "CDCompany.Company")});
             this.xrLabel6.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(397.9167F, 0F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(397.9167F, 46F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel6.SizeF = new System.Drawing.SizeF(252.0833F, 23F);
@@ -403,13 +410,6 @@
             // 
             this.pramPERSONID.Description = "اسم التلميذ";
             this.pramPERSONID.Name = "pramPERSONID";
-            // 
-            // xrPicLogo
-            // 
-            this.xrPicLogo.LocationFloat = new DevExpress.Utils.PointFloat(8.333298F, 10F);
-            this.xrPicLogo.Name = "xrPicLogo";
-            this.xrPicLogo.SizeF = new System.Drawing.SizeF(106.25F, 92.41664F);
-            this.xrPicLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
             // XRep02
             // 

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
+using BookStore.XRep;
 
 namespace BookStore
 {
@@ -745,29 +746,28 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
                 // Print Bill Resit
                 ShowTotal();
 
-                XRepBillResit report = new XRepBillResit();
-                report.LoadDataSource(StoreTrID);
+                XRep03 report = new XRep03(Convert.ToInt32(LUEPERSONID.EditValue));
+                Program.ShowPrintPreview(report);
 
-                report.LblStoreTrIDTYPE.Text = StoreTrIDTYPE;
-                report.LblStoreTrIDDAY.Text = StoreTrIDDAY;
-                report.LblStoreTrDate.Text = DEStoreTrDate.Text;
-                report.LblSaf.Text = FXFW.SqlDB.LoadDataTable(String.Format(@"SELECT alsofof_NAME FROM CDalsofof
-                WHERE alsofof_code = (SELECT alsofof_code FROM student_t WHERE asase_code = {0} AND stu_code = 
-                (SELECT PERSONID FROM TBLStoreTransaction WHERE StoreTrID = {1}) )", Program.asase_code, StoreTrID)).Rows[0][0].ToString() + ")";
-                
-                report.LblPERSONID.Text = LUEPERSONID.Text;
-                report.LblTotal.Text = LblTotal.Text;
-                report.LblPayed.Text = LblTotal.Text;
-                report.xrBarCodeItem.Text = StoreTrID;
-
-
-                DataTable dt = FXFW.SqlDB.LoadDataTable("SELECT Company FROM CDCompany");
-                if (dt.Rows.Count > 0)
-                    report.LblCompany.Text = dt.Rows[0]["Company"].ToString();
-                else
-                    report.LblCompany.Text = string.Empty;
-                if (HaveNoMortaga3 == false)
-                    Program.ShowPrintPreview(report);
+//                XRepBillResit report = new XRepBillResit();
+//                report.LoadDataSource(StoreTrID);
+//                report.LblStoreTrIDTYPE.Text = StoreTrIDTYPE;
+//                report.LblStoreTrIDDAY.Text = StoreTrIDDAY;
+//                report.LblStoreTrDate.Text = DEStoreTrDate.Text;
+//                report.LblSaf.Text = FXFW.SqlDB.LoadDataTable(String.Format(@"SELECT alsofof_NAME FROM CDalsofof
+//                WHERE alsofof_code = (SELECT alsofof_code FROM student_t WHERE asase_code = {0} AND stu_code = 
+//                (SELECT PERSONID FROM TBLStoreTransaction WHERE StoreTrID = {1}) )", Program.asase_code, StoreTrID)).Rows[0][0].ToString() + ")";
+//                report.LblPERSONID.Text = LUEPERSONID.Text;
+//                report.LblTotal.Text = LblTotal.Text;
+//                report.LblPayed.Text = LblTotal.Text;
+//                report.xrBarCodeItem.Text = StoreTrID;
+//                DataTable dt = FXFW.SqlDB.LoadDataTable("SELECT Company FROM CDCompany");
+//                if (dt.Rows.Count > 0)
+//                    report.LblCompany.Text = dt.Rows[0]["Company"].ToString();
+//                else
+//                    report.LblCompany.Text = string.Empty;
+//                if (HaveNoMortaga3 == false)
+//                    Program.ShowPrintPreview(report);
 
                 //using (BillResitFrm PrintResit = new BillResitFrm(StoreTrID, StoreTrIDDAY, StoreTrIDTYPE, DEStoreTrDate.Text, LUEPERSONID.Text, LblTotal.Text, LblTotal.Text))
                 //    PrintResit.ShowDialog();
@@ -1017,35 +1017,34 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
         }
         private void repositoryItemButtonEditPrint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            
+
             //GetBillDetial();
             //DataTable dt1 = (DataTable)gridControlEditDetails.DataSource;
             DataRow row = gridViewEdit.GetFocusedDataRow();
 
-            XRepBillResit report = new XRepBillResit();
-            report.LoadDataSource(row["StoreTrID"].ToString());
-
-            report.LblStoreTrIDTYPE.Text = row["StoreTrIDTYPE"].ToString();
-            report.LblStoreTrIDDAY.Text = row["StoreTrIDDAY"].ToString();
-            report.LblStoreTrDate.Text = DEStoreTrDate.Text;
-            DataTable alsofof_NAMETbl = FXFW.SqlDB.LoadDataTable(String.Format(@"SELECT alsofof_NAME FROM CDalsofof
-                WHERE alsofof_code = (SELECT alsofof_code FROM student_t WHERE asase_code = (Select Max(asase_code) From student_t) AND stu_code = 
-                (SELECT PERSONID FROM TBLStoreTransaction WHERE StoreTrID = {0}) )", row["StoreTrID"]));
-            if (alsofof_NAMETbl.Rows.Count > 0)
-                report.LblSaf.Text = alsofof_NAMETbl.Rows[0][0].ToString();
-
-            report.LblPERSONID.Text = LUEPERSONID.Text;
-            report.LblTotal.Text = LblTotal.Text;
-            report.LblPayed.Text = LblTotal.Text;
-            report.xrBarCodeItem.Text = row["StoreTrID"].ToString();
-
-
-            DataTable dt = FXFW.SqlDB.LoadDataTable("SELECT Company FROM CDCompany");
-            if (dt.Rows.Count > 0)
-                report.LblCompany.Text = dt.Rows[0]["Company"].ToString();
-            else
-                report.LblCompany.Text = string.Empty;
-
+            XRep03 report = new XRep03(Convert.ToInt32(row["PERSONID"]));
             Program.ShowPrintPreview(report);
+//            XRepBillResit report = new XRepBillResit();
+//            report.LoadDataSource(row["StoreTrID"].ToString());
+//            report.LblStoreTrIDTYPE.Text = row["StoreTrIDTYPE"].ToString();
+//            report.LblStoreTrIDDAY.Text = row["StoreTrIDDAY"].ToString();
+//            report.LblStoreTrDate.Text = DEStoreTrDate.Text;
+//            DataTable alsofof_NAMETbl = FXFW.SqlDB.LoadDataTable(String.Format(@"SELECT alsofof_NAME FROM CDalsofof
+//                WHERE alsofof_code = (SELECT alsofof_code FROM student_t WHERE asase_code = (Select Max(asase_code) From student_t) AND stu_code = 
+//                (SELECT PERSONID FROM TBLStoreTransaction WHERE StoreTrID = {0}) )", row["StoreTrID"]));
+//            if (alsofof_NAMETbl.Rows.Count > 0)
+//                report.LblSaf.Text = alsofof_NAMETbl.Rows[0][0].ToString();
+//            report.LblPERSONID.Text = LUEPERSONID.Text;
+//            report.LblTotal.Text = LblTotal.Text;
+//            report.LblPayed.Text = LblTotal.Text;
+//            report.xrBarCodeItem.Text = row["StoreTrID"].ToString();
+//            DataTable dt = FXFW.SqlDB.LoadDataTable("SELECT Company FROM CDCompany");
+//            if (dt.Rows.Count > 0)
+//                report.LblCompany.Text = dt.Rows[0]["Company"].ToString();
+//            else
+//                report.LblCompany.Text = string.Empty;
+//            Program.ShowPrintPreview(report);
 
         }
         private void TxtBarcodeClose_KeyPress(object sender, KeyPressEventArgs e)

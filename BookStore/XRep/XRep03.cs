@@ -12,29 +12,49 @@ namespace BookStore.XRep
 {
     public partial class XRep03 : DevExpress.XtraReports.UI.XtraReport
     {
+        int _studentCode = 0;
         public XRep03()
         {
             InitializeComponent();
         }
+        public XRep03(int StudentCode)
+        {
+            InitializeComponent();
+            _studentCode = StudentCode;
+            pramPERSONID.Visible = false;
+            pramPERSONID.Value = StudentCode;
+            XRep02_ParametersRequestSubmit(new object(), null);
+            
+
+
+        }
         private void XRep02_ParametersRequestSubmit(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
         {
-            cDCompanyTableAdapter.Fill(dsBookStoreQueries1.CDCompany);
-            xRep03TableAdapter.Fill(dsBookStoreQueries1.XRep03, Convert.ToInt32(e.ParametersInformation[0].Parameter.Value), Program.asase_code);
-            LookUpEdit lue = (LookUpEdit)e.ParametersInformation[0].Editor;
-            DataSources.dsBookStoreQueries.studentRow row = (DataSources.dsBookStoreQueries.studentRow)((DataRowView)lue.GetSelectedDataRow()).Row;
-            xrlStudent.Text = row["stu_name"].ToString();
-            xrlSaf.Text = row["alsofof_NAME"].ToString();
-            xrlFasl.Text = row["fasl_name"].ToString();
-            xrlAsaseName.Text = new DataSources.dsBookStoreQueriesTableAdapters.QueriesTableAdapter().Getasase_year(Program.asase_code);
-            if (dsBookStoreQueries1.CDCompany.Rows[0]["Logo"] != null)
+            int studentCode = 0;
+            if (_studentCode != 0)
             {
-                System.IO.MemoryStream ms = new System.IO.MemoryStream((byte[])dsBookStoreQueries1.CDCompany.Rows[0]["Logo"]);
+                studentCode = _studentCode;
+            }
+            else
+            {
+                studentCode = Convert.ToInt32(e.ParametersInformation[0].Parameter.Value);
+            }
+            cDCompanyTableAdapter.Fill(dsBookStoreQueries.CDCompany);
+            xRep03TableAdapter.Fill(dsBookStoreQueries.XRep03, studentCode, Program.asase_code);
+            DataSources.dsBookStoreQueries.v_studentRow row = v_studentTableAdapter.GetDataBystu_code(studentCode)[0];
+
+            xrlStudent.Text = row.stu_name;
+            xrlSaf.Text = row.alsofof_NAME;
+            xrlFasl.Text = row.fasl_name;
+            xrlAsaseName.Text = new DataSources.dsBookStoreQueriesTableAdapters.QueriesTableAdapter().Getasase_year(Program.asase_code);
+            if (dsBookStoreQueries.CDCompany.Rows[0]["Logo"] != null)
+            {
+                System.IO.MemoryStream ms = new System.IO.MemoryStream((byte[])dsBookStoreQueries.CDCompany.Rows[0]["Logo"]);
                 xrPicLogo.Image = Image.FromStream(ms);
             }
             
         }
 
-       
         private void XRep02_ParametersRequestBeforeShow(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
         {
             foreach (ParameterInfo info in e.ParametersInformation)
@@ -42,10 +62,10 @@ namespace BookStore.XRep
                 if (info.Parameter.Name == "pramPERSONID")
                 {
                     DataSources.dsBookStoreQueriesTableAdapters.studentTableAdapter adp = new DataSources.dsBookStoreQueriesTableAdapters.studentTableAdapter();
-                    adp.FillByasase_code_Detail1(dsBookStoreQueries1.student, Program.asase_code);
+                    adp.FillByasase_code_Detail1(dsBookStoreQueries.student, Program.asase_code);
 
                     LookUpEdit LUE = new LookUpEdit();
-                    LUE.Properties.DataSource = dsBookStoreQueries1.student;
+                    LUE.Properties.DataSource = dsBookStoreQueries.student;
                     LUE.Properties.DisplayMember = "stu_name";
                     LUE.Properties.ValueMember = "stu_code";
                     LUE.Properties.Columns.Add(new LookUpColumnInfo("stu_name", 0, "الاسماء"));
@@ -58,6 +78,16 @@ namespace BookStore.XRep
                     continue;
                 }
 
+            }
+        }
+
+        private void XRep03_DataSourceDemanded(object sender, EventArgs e)
+        {
+            
+            if (_studentCode != 0)
+            {
+                Parameters[0].Value = _studentCode;
+                
             }
         }
 

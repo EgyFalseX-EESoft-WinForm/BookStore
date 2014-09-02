@@ -85,14 +85,13 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(463, 213);
+            this.groupControl1.Size = new System.Drawing.Size(484, 213);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "بيانات الشركه";
             // 
             // peLogo
             // 
             this.peLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.peLogo.Location = new System.Drawing.Point(5, 24);
+            this.peLogo.Location = new System.Drawing.Point(16, 24);
             this.peLogo.Name = "peLogo";
             this.peLogo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.peLogo.Size = new System.Drawing.Size(200, 173);
@@ -101,121 +100,129 @@
             // tbremark
             // 
             this.tbremark.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbremark.Location = new System.Drawing.Point(208, 177);
+            this.tbremark.Location = new System.Drawing.Point(219, 177);
             this.tbremark.Name = "tbremark";
-            this.tbremark.Size = new System.Drawing.Size(200, 20);
+            this.tbremark.Size = new System.Drawing.Size(179, 20);
             this.tbremark.TabIndex = 1;
+            this.tbremark.Visible = false;
             // 
             // labelControl7
             // 
             this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl7.Location = new System.Drawing.Point(417, 180);
+            this.labelControl7.Location = new System.Drawing.Point(433, 180);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(33, 13);
             this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "معلومه";
+            this.labelControl7.Visible = false;
             // 
             // tbCompanyFax
             // 
             this.tbCompanyFax.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbCompanyFax.Location = new System.Drawing.Point(208, 151);
+            this.tbCompanyFax.Location = new System.Drawing.Point(219, 151);
             this.tbCompanyFax.Name = "tbCompanyFax";
-            this.tbCompanyFax.Size = new System.Drawing.Size(200, 20);
+            this.tbCompanyFax.Size = new System.Drawing.Size(179, 20);
             this.tbCompanyFax.TabIndex = 1;
+            this.tbCompanyFax.Visible = false;
             // 
             // labelControl6
             // 
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl6.Location = new System.Drawing.Point(416, 154);
+            this.labelControl6.Location = new System.Drawing.Point(432, 154);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(34, 13);
             this.labelControl6.TabIndex = 0;
             this.labelControl6.Text = "الفاكس";
+            this.labelControl6.Visible = false;
             // 
             // tbCompanyMobil
             // 
             this.tbCompanyMobil.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbCompanyMobil.Location = new System.Drawing.Point(208, 125);
+            this.tbCompanyMobil.Location = new System.Drawing.Point(219, 125);
             this.tbCompanyMobil.Name = "tbCompanyMobil";
-            this.tbCompanyMobil.Size = new System.Drawing.Size(200, 20);
+            this.tbCompanyMobil.Size = new System.Drawing.Size(179, 20);
             this.tbCompanyMobil.TabIndex = 1;
+            this.tbCompanyMobil.Visible = false;
             // 
             // labelControl5
             // 
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl5.Location = new System.Drawing.Point(417, 128);
+            this.labelControl5.Location = new System.Drawing.Point(433, 128);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(33, 13);
             this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "الموبيل";
+            this.labelControl5.Visible = false;
             // 
             // tbCompanyTel
             // 
             this.tbCompanyTel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbCompanyTel.Location = new System.Drawing.Point(208, 99);
+            this.tbCompanyTel.Location = new System.Drawing.Point(219, 73);
             this.tbCompanyTel.Name = "tbCompanyTel";
-            this.tbCompanyTel.Size = new System.Drawing.Size(200, 20);
+            this.tbCompanyTel.Size = new System.Drawing.Size(179, 20);
             this.tbCompanyTel.TabIndex = 1;
             // 
             // labelControl4
             // 
             this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl4.Location = new System.Drawing.Point(414, 102);
+            this.labelControl4.Location = new System.Drawing.Point(446, 76);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(36, 13);
+            this.labelControl4.Size = new System.Drawing.Size(20, 13);
             this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "التليفون";
+            this.labelControl4.Text = "ادارة";
             // 
             // tbCompanyAddess
             // 
             this.tbCompanyAddess.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbCompanyAddess.Location = new System.Drawing.Point(208, 73);
+            this.tbCompanyAddess.Location = new System.Drawing.Point(219, 47);
             this.tbCompanyAddess.Name = "tbCompanyAddess";
-            this.tbCompanyAddess.Size = new System.Drawing.Size(200, 20);
+            this.tbCompanyAddess.Size = new System.Drawing.Size(179, 20);
             this.tbCompanyAddess.TabIndex = 1;
             // 
             // labelControl3
             // 
             this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl3.Location = new System.Drawing.Point(419, 76);
+            this.labelControl3.Location = new System.Drawing.Point(431, 50);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(31, 13);
+            this.labelControl3.Size = new System.Drawing.Size(35, 13);
             this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "العنوان";
+            this.labelControl3.Text = "محافظة";
             // 
             // tbCompanyOfficial
             // 
             this.tbCompanyOfficial.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbCompanyOfficial.Location = new System.Drawing.Point(208, 47);
+            this.tbCompanyOfficial.Location = new System.Drawing.Point(219, 99);
             this.tbCompanyOfficial.Name = "tbCompanyOfficial";
-            this.tbCompanyOfficial.Size = new System.Drawing.Size(200, 20);
+            this.tbCompanyOfficial.Size = new System.Drawing.Size(179, 20);
             this.tbCompanyOfficial.TabIndex = 1;
+            this.tbCompanyOfficial.Visible = false;
             // 
             // labelControl2
             // 
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl2.Location = new System.Drawing.Point(417, 50);
+            this.labelControl2.Location = new System.Drawing.Point(433, 102);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(33, 13);
             this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "المكتب";
+            this.labelControl2.Visible = false;
             // 
             // tbCompany
             // 
             this.tbCompany.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbCompany.Location = new System.Drawing.Point(208, 21);
+            this.tbCompany.Location = new System.Drawing.Point(219, 21);
             this.tbCompany.Name = "tbCompany";
-            this.tbCompany.Size = new System.Drawing.Size(200, 20);
+            this.tbCompany.Size = new System.Drawing.Size(179, 20);
             this.tbCompany.TabIndex = 1;
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl1.Location = new System.Drawing.Point(421, 24);
+            this.labelControl1.Location = new System.Drawing.Point(401, 24);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(29, 13);
+            this.labelControl1.Size = new System.Drawing.Size(65, 13);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "الاسم";
+            this.labelControl1.Text = "اسم المدرسه";
             // 
             // groupControl2
             // 
@@ -226,14 +233,14 @@
             this.groupControl2.Controls.Add(this.btnSave);
             this.groupControl2.Location = new System.Drawing.Point(12, 231);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(463, 53);
+            this.groupControl2.Size = new System.Drawing.Size(484, 53);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "حفظ";
             // 
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSave.Location = new System.Drawing.Point(162, 22);
+            this.btnSave.Location = new System.Drawing.Point(173, 22);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(139, 23);
             this.btnSave.TabIndex = 0;
@@ -244,12 +251,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 290);
+            this.ClientSize = new System.Drawing.Size(513, 290);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CompanyFrm";
-            this.Text = "بيانات الشركه";
+            this.Text = "بيانات المدرسه";
             this.Load += new System.EventHandler(this.CompanyFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
