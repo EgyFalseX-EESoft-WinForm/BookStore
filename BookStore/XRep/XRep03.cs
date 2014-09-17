@@ -13,14 +13,17 @@ namespace BookStore.XRep
     public partial class XRep03 : DevExpress.XtraReports.UI.XtraReport
     {
         int _studentCode = 0;
+        int _StoreTrID = 0;
         public XRep03()
         {
             InitializeComponent();
         }
-        public XRep03(int StudentCode)
+        public XRep03(int StudentCode, int StoreTrID)
         {
             InitializeComponent();
+
             _studentCode = StudentCode;
+            _StoreTrID = StoreTrID;
             pramPERSONID.Visible = false;
             pramPERSONID.Value = StudentCode;
             XRep02_ParametersRequestSubmit(new object(), null);
@@ -40,14 +43,14 @@ namespace BookStore.XRep
                 studentCode = Convert.ToInt32(e.ParametersInformation[0].Parameter.Value);
             }
             cDCompanyTableAdapter.Fill(dsBookStoreQueries.CDCompany);
-            xRep03TableAdapter.Fill(dsBookStoreQueries.XRep03, studentCode, Program.asase_code);
-            DataSources.dsBookStoreQueries.v_studentRow row = v_studentTableAdapter.GetDataBystu_code(studentCode)[0];
+            xRep03TableAdapter.Fill(dsBookStoreQueries.XRep03, studentCode, Program.asase_code, _StoreTrID);
+            DataSources.dsBookStoreQueries.v_studentRow row = v_studentTableAdapter.GetDataBystu_code(studentCode, Program.asase_code)[0];
 
             xrlStudent.Text = row.stu_name;
             xrlSaf.Text = row.alsofof_NAME;
             xrlFasl.Text = row.fasl_name;
             xrlAsaseName.Text = new DataSources.dsBookStoreQueriesTableAdapters.QueriesTableAdapter().Getasase_year(Program.asase_code);
-            if (dsBookStoreQueries.CDCompany.Rows[0]["Logo"] != null)
+            if (!FXFW.SqlDB.IsNullOrEmpty(dsBookStoreQueries.CDCompany.Rows[0]["Logo"]))
             {
                 System.IO.MemoryStream ms = new System.IO.MemoryStream((byte[])dsBookStoreQueries.CDCompany.Rows[0]["Logo"]);
                 xrPicLogo.Image = Image.FromStream(ms);

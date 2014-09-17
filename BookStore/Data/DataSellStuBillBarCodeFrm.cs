@@ -37,7 +37,7 @@ namespace BookStore
         {
             // Get All Asnaf Types
             AsnafTbl = new DataTable();
-            AsnafTbl = FXFW.SqlDB.LoadDataTable("Select SanfID, SanfName, Sanfbarcode From CDASNAF");
+            AsnafTbl = FXFW.SqlDB.LoadDataTable("Select SanfID, SanfName, Sanfbarcode From CDASNAF Where Canceled = 0");
             repositoryItemLookUpEditAddSanfID.DataSource = AsnafTbl;
             repositoryItemLookUpEditAddSanfID.DisplayMember = "SanfName";
             repositoryItemLookUpEditAddSanfID.ValueMember = "SanfID";
@@ -460,7 +460,7 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
                 return;
              string msg = string.Empty;
 
-             DataTable Asnaf = FXFW.SqlDB.LoadDataTable(@"Select SanfID, SanfName, Sanfbarcode From CDASNAF Where CategoryID = " + TasnefTbl.Rows[CBETasnef.SelectedIndex]["CategoryID"]);
+             DataTable Asnaf = FXFW.SqlDB.LoadDataTable(@"Select SanfID, SanfName, Sanfbarcode From CDASNAF Where Canceled = 0 And CategoryID = " + TasnefTbl.Rows[CBETasnef.SelectedIndex]["CategoryID"]);
             try
             {
                 foreach (DataRow item in Asnaf.Rows)
@@ -746,7 +746,7 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
                 // Print Bill Resit
                 ShowTotal();
 
-                XRep03 report = new XRep03(Convert.ToInt32(LUEPERSONID.EditValue));
+                XRep03 report = new XRep03(Convert.ToInt32(LUEPERSONID.EditValue), Convert.ToInt32(StoreTrID));
                 Program.ShowPrintPreview(report);
 
 //                XRepBillResit report = new XRepBillResit();
@@ -1023,7 +1023,7 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
             //DataTable dt1 = (DataTable)gridControlEditDetails.DataSource;
             DataRow row = gridViewEdit.GetFocusedDataRow();
 
-            XRep03 report = new XRep03(Convert.ToInt32(row["PERSONID"]));
+            XRep03 report = new XRep03(Convert.ToInt32(row["PERSONID"]), Convert.ToInt32(row["StoreTrID"]));
             Program.ShowPrintPreview(report);
 //            XRepBillResit report = new XRepBillResit();
 //            report.LoadDataSource(row["StoreTrID"].ToString());

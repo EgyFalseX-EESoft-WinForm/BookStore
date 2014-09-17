@@ -43,13 +43,14 @@
             this.GCPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GCStoreTrDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.cardViewSells = new DevExpress.XtraGrid.Views.Card.CardView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             this.CMS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
@@ -62,20 +63,22 @@
             // 
             // gridControlMain
             // 
+            this.gridControlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlMain.ContextMenuStrip = this.CMS;
-            this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridControlMain.EmbeddedNavigator.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.gridControlMain.Location = new System.Drawing.Point(0, 0);
+            this.gridControlMain.Location = new System.Drawing.Point(0, 41);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2});
-            this.gridControlMain.Size = new System.Drawing.Size(643, 431);
+            this.gridControlMain.Size = new System.Drawing.Size(643, 390);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -262,6 +265,7 @@
             this.gridViewMain.OptionsPrint.ExpandAllDetails = true;
             this.gridViewMain.OptionsPrint.PrintDetails = true;
             this.gridViewMain.OptionsPrint.PrintFilterInfo = true;
+            this.gridViewMain.OptionsView.ColumnAutoWidth = false;
             this.gridViewMain.OptionsView.EnableAppearanceEvenRow = true;
             this.gridViewMain.OptionsView.EnableAppearanceOddRow = true;
             this.gridViewMain.OptionsView.ShowFooter = true;
@@ -277,7 +281,7 @@
             this.GCSanfName.Name = "GCSanfName";
             this.GCSanfName.Visible = true;
             this.GCSanfName.VisibleIndex = 0;
-            this.GCSanfName.Width = 324;
+            this.GCSanfName.Width = 177;
             // 
             // GCQuantity
             // 
@@ -292,7 +296,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
             this.GCQuantity.Visible = true;
             this.GCQuantity.VisibleIndex = 2;
-            this.GCQuantity.Width = 176;
+            this.GCQuantity.Width = 96;
             // 
             // GCPrice
             // 
@@ -307,7 +311,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
             this.GCPrice.Visible = true;
             this.GCPrice.VisibleIndex = 3;
-            this.GCPrice.Width = 182;
+            this.GCPrice.Width = 73;
             // 
             // GCStoreTrDate
             // 
@@ -321,7 +325,7 @@
             this.GCStoreTrDate.Name = "GCStoreTrDate";
             this.GCStoreTrDate.Visible = true;
             this.GCStoreTrDate.VisibleIndex = 4;
-            this.GCStoreTrDate.Width = 226;
+            this.GCStoreTrDate.Width = 111;
             // 
             // repositoryItemDateEdit1
             // 
@@ -337,6 +341,19 @@
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             this.repositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.Caption = "جهة التوريد";
+            this.gridColumn5.FieldName = "PERSON";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 1;
+            this.gridColumn5.Width = 155;
             // 
             // repositoryItemDateEdit2
             // 
@@ -433,24 +450,22 @@
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             // 
-            // gridColumn5
+            // btnPrint
             // 
-            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn5.Caption = "جهة التوريد";
-            this.gridColumn5.FieldName = "PERSON";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 1;
-            this.gridColumn5.Width = 272;
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.Location = new System.Drawing.Point(504, 12);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(127, 23);
+            this.btnPrint.TabIndex = 9;
+            this.btnPrint.Text = "طباعة";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // QryBuysFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 431);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.gridControlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QryBuysFrm";
@@ -490,5 +505,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
     }
 }

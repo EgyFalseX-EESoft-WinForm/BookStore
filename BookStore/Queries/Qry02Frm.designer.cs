@@ -1,6 +1,6 @@
 ﻿namespace BookStore
 {
-    partial class Qrysp_StudentBooksRequests
+    partial class Qry02Frm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Qrysp_StudentBooksRequests));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Qry02Frm));
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.CMS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,29 +37,26 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.cardViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.spStudentBooksRequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qry02BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsBookStoreQueries = new BookStore.DataSources.dsBookStoreQueries();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colstu_code = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colstu_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colwaleaalkamr_mobile = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colalsofof_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colfasl_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSanfName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRequest = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStoreTrDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.cardViewSells = new DevExpress.XtraGrid.Views.Card.CardView();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.sp_StudentBooksRequestsTableAdapter = new BookStore.DataSources.dsBookStoreQueriesTableAdapters.sp_StudentBooksRequestsTableAdapter();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.qry02TableAdapter = new BookStore.DataSources.dsBookStoreQueriesTableAdapters.Qry02TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             this.CMS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spStudentBooksRequestsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qry02BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsBookStoreQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -75,7 +72,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlMain.ContextMenuStrip = this.CMS;
-            this.gridControlMain.DataSource = this.spStudentBooksRequestsBindingSource;
+            this.gridControlMain.DataSource = this.qry02BindingSource;
             this.gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.Edit.Visible = false;
@@ -88,7 +85,7 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2});
             this.gridControlMain.Size = new System.Drawing.Size(643, 421);
-            this.gridControlMain.TabIndex = 1;
+            this.gridControlMain.TabIndex = 0;
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain,
@@ -140,10 +137,10 @@
             this.gridViewToolStripMenuItem.Text = "عرض جدولي";
             this.gridViewToolStripMenuItem.Click += new System.EventHandler(this.gridViewToolStripMenuItem_Click);
             // 
-            // spStudentBooksRequestsBindingSource
+            // qry02BindingSource
             // 
-            this.spStudentBooksRequestsBindingSource.DataMember = "sp_StudentBooksRequests";
-            this.spStudentBooksRequestsBindingSource.DataSource = this.dsBookStoreQueries;
+            this.qry02BindingSource.DataMember = "Qry02";
+            this.qry02BindingSource.DataSource = this.dsBookStoreQueries;
             // 
             // dsBookStoreQueries
             // 
@@ -266,15 +263,16 @@
             this.gridViewMain.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(208)))), ((int)(((byte)(200)))));
             this.gridViewMain.Appearance.VertLine.Options.UseBackColor = true;
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colstu_code,
             this.colstu_name,
-            this.colwaleaalkamr_mobile,
             this.colalsofof_NAME,
             this.colfasl_name,
-            this.colSanfName,
-            this.colRequest});
+            this.colStoreTrDate,
+            this.colQuantity});
             this.gridViewMain.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridViewMain.GridControl = this.gridControlMain;
+            this.gridViewMain.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", null, ""),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Price", null, "")});
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridViewMain.OptionsBehavior.ReadOnly = true;
@@ -288,41 +286,18 @@
             this.gridViewMain.OptionsView.EnableAppearanceOddRow = true;
             this.gridViewMain.OptionsView.ShowFooter = true;
             // 
-            // colstu_code
-            // 
-            this.colstu_code.AppearanceCell.Options.UseTextOptions = true;
-            this.colstu_code.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colstu_code.AppearanceHeader.Options.UseTextOptions = true;
-            this.colstu_code.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colstu_code.Caption = "كود الطالب";
-            this.colstu_code.FieldName = "stu_code";
-            this.colstu_code.Name = "colstu_code";
-            this.colstu_code.Visible = true;
-            this.colstu_code.VisibleIndex = 0;
-            // 
             // colstu_name
             // 
             this.colstu_name.AppearanceCell.Options.UseTextOptions = true;
             this.colstu_name.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colstu_name.AppearanceHeader.Options.UseTextOptions = true;
             this.colstu_name.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colstu_name.Caption = "اسم الطالب";
+            this.colstu_name.Caption = "الاسم";
             this.colstu_name.FieldName = "stu_name";
             this.colstu_name.Name = "colstu_name";
             this.colstu_name.Visible = true;
-            this.colstu_name.VisibleIndex = 1;
-            // 
-            // colwaleaalkamr_mobile
-            // 
-            this.colwaleaalkamr_mobile.AppearanceCell.Options.UseTextOptions = true;
-            this.colwaleaalkamr_mobile.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colwaleaalkamr_mobile.AppearanceHeader.Options.UseTextOptions = true;
-            this.colwaleaalkamr_mobile.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colwaleaalkamr_mobile.Caption = "رقم الموبيل";
-            this.colwaleaalkamr_mobile.FieldName = "waleaalkamr_mobile";
-            this.colwaleaalkamr_mobile.Name = "colwaleaalkamr_mobile";
-            this.colwaleaalkamr_mobile.Visible = true;
-            this.colwaleaalkamr_mobile.VisibleIndex = 2;
+            this.colstu_name.VisibleIndex = 0;
+            this.colstu_name.Width = 220;
             // 
             // colalsofof_NAME
             // 
@@ -334,7 +309,8 @@
             this.colalsofof_NAME.FieldName = "alsofof_NAME";
             this.colalsofof_NAME.Name = "colalsofof_NAME";
             this.colalsofof_NAME.Visible = true;
-            this.colalsofof_NAME.VisibleIndex = 3;
+            this.colalsofof_NAME.VisibleIndex = 1;
+            this.colalsofof_NAME.Width = 117;
             // 
             // colfasl_name
             // 
@@ -346,31 +322,33 @@
             this.colfasl_name.FieldName = "fasl_name";
             this.colfasl_name.Name = "colfasl_name";
             this.colfasl_name.Visible = true;
-            this.colfasl_name.VisibleIndex = 4;
+            this.colfasl_name.VisibleIndex = 2;
+            this.colfasl_name.Width = 121;
             // 
-            // colSanfName
+            // colStoreTrDate
             // 
-            this.colSanfName.AppearanceCell.Options.UseTextOptions = true;
-            this.colSanfName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSanfName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colSanfName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colSanfName.Caption = "اسم الصنف";
-            this.colSanfName.FieldName = "SanfName";
-            this.colSanfName.Name = "colSanfName";
-            this.colSanfName.Visible = true;
-            this.colSanfName.VisibleIndex = 5;
+            this.colStoreTrDate.AppearanceCell.Options.UseTextOptions = true;
+            this.colStoreTrDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colStoreTrDate.AppearanceHeader.Options.UseTextOptions = true;
+            this.colStoreTrDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colStoreTrDate.Caption = "التاريخ";
+            this.colStoreTrDate.FieldName = "StoreTrDate";
+            this.colStoreTrDate.Name = "colStoreTrDate";
+            this.colStoreTrDate.Visible = true;
+            this.colStoreTrDate.VisibleIndex = 3;
             // 
-            // colRequest
+            // colQuantity
             // 
-            this.colRequest.AppearanceCell.Options.UseTextOptions = true;
-            this.colRequest.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRequest.AppearanceHeader.Options.UseTextOptions = true;
-            this.colRequest.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRequest.Caption = "الحالة";
-            this.colRequest.FieldName = "Request";
-            this.colRequest.Name = "colRequest";
-            this.colRequest.Visible = true;
-            this.colRequest.VisibleIndex = 6;
+            this.colQuantity.AppearanceCell.Options.UseTextOptions = true;
+            this.colQuantity.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colQuantity.AppearanceHeader.Options.UseTextOptions = true;
+            this.colQuantity.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colQuantity.Caption = "الكمية";
+            this.colQuantity.FieldName = "Quantity";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.OptionsColumn.ReadOnly = true;
+            this.colQuantity.Visible = true;
+            this.colQuantity.VisibleIndex = 4;
             // 
             // repositoryItemDateEdit1
             // 
@@ -438,7 +416,6 @@
             this.cardViewSells.Appearance.SeparatorLine.BackColor = System.Drawing.Color.LightGray;
             this.cardViewSells.Appearance.SeparatorLine.Options.UseBackColor = true;
             this.cardViewSells.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn6,
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -450,21 +427,13 @@
             this.cardViewSells.OptionsPrint.PrintFilterInfo = true;
             this.cardViewSells.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
             // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "الاسم";
-            this.gridColumn6.FieldName = "EMPNAME";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
-            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "اسم الصنف";
             this.gridColumn1.FieldName = "SanfName";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.VisibleIndex = 0;
             // 
             // gridColumn2
             // 
@@ -472,7 +441,7 @@
             this.gridColumn2.FieldName = "Quantity";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.VisibleIndex = 1;
             // 
             // gridColumn3
             // 
@@ -480,7 +449,7 @@
             this.gridColumn3.FieldName = "Price";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.VisibleIndex = 2;
             // 
             // gridColumn4
             // 
@@ -489,11 +458,7 @@
             this.gridColumn4.FieldName = "StoreTrDate";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
-            // 
-            // sp_StudentBooksRequestsTableAdapter
-            // 
-            this.sp_StudentBooksRequestsTableAdapter.ClearBeforeFill = true;
+            this.gridColumn4.VisibleIndex = 3;
             // 
             // btnPrint
             // 
@@ -501,11 +466,15 @@
             this.btnPrint.Location = new System.Drawing.Point(504, 12);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(127, 23);
-            this.btnPrint.TabIndex = 9;
+            this.btnPrint.TabIndex = 8;
             this.btnPrint.Text = "طباعة";
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // Qrysp_StudentBooksRequests
+            // qry02TableAdapter
+            // 
+            this.qry02TableAdapter.ClearBeforeFill = true;
+            // 
+            // Qry02Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -513,12 +482,12 @@
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.gridControlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Qrysp_StudentBooksRequests";
-            this.Text = "حالة الصرف للطالب";
+            this.Name = "Qry02Frm";
+            this.Text = "استعلام المبيعات اجمالي";
             this.Load += new System.EventHandler(this.QryPartnerStaffFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             this.CMS.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.spStudentBooksRequestsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qry02BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsBookStoreQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).EndInit();
@@ -547,17 +516,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private System.Windows.Forms.BindingSource spStudentBooksRequestsBindingSource;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private System.Windows.Forms.BindingSource qry02BindingSource;
         private DataSources.dsBookStoreQueries dsBookStoreQueries;
-        private DevExpress.XtraGrid.Columns.GridColumn colstu_code;
         private DevExpress.XtraGrid.Columns.GridColumn colstu_name;
-        private DevExpress.XtraGrid.Columns.GridColumn colwaleaalkamr_mobile;
         private DevExpress.XtraGrid.Columns.GridColumn colalsofof_NAME;
         private DevExpress.XtraGrid.Columns.GridColumn colfasl_name;
-        private DevExpress.XtraGrid.Columns.GridColumn colSanfName;
-        private DevExpress.XtraGrid.Columns.GridColumn colRequest;
-        private DataSources.dsBookStoreQueriesTableAdapters.sp_StudentBooksRequestsTableAdapter sp_StudentBooksRequestsTableAdapter;
-        private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private DevExpress.XtraGrid.Columns.GridColumn colStoreTrDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
+        private DataSources.dsBookStoreQueriesTableAdapters.Qry02TableAdapter qry02TableAdapter;
     }
 }

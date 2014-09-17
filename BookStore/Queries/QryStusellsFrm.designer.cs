@@ -46,11 +46,12 @@
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.cardViewSells = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             this.CMS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
@@ -64,19 +65,18 @@
             // gridControlMain
             // 
             this.gridControlMain.ContextMenuStrip = this.CMS;
-            this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridControlMain.EmbeddedNavigator.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.gridControlMain.Location = new System.Drawing.Point(0, 0);
+            this.gridControlMain.Location = new System.Drawing.Point(0, 41);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2});
-            this.gridControlMain.Size = new System.Drawing.Size(643, 462);
+            this.gridControlMain.Size = new System.Drawing.Size(643, 421);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -92,13 +92,13 @@
             this.cardViewToolStripMenuItem,
             this.gridViewToolStripMenuItem});
             this.CMS.Name = "CMSPartnerStaff";
-            this.CMS.Size = new System.Drawing.Size(166, 98);
+            this.CMS.Size = new System.Drawing.Size(172, 98);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Image = global::BookStore.Properties.Resources.Refresh;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.refreshToolStripMenuItem.Text = "اعادة تحميل البيانات";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
@@ -106,26 +106,26 @@
             // 
             this.printToolStripMenuItem.Image = global::BookStore.Properties.Resources.Print;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.printToolStripMenuItem.Text = "طباعه";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(162, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(168, 6);
             // 
             // cardViewToolStripMenuItem
             // 
             this.cardViewToolStripMenuItem.Name = "cardViewToolStripMenuItem";
-            this.cardViewToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.cardViewToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.cardViewToolStripMenuItem.Text = "عرض كروت";
             this.cardViewToolStripMenuItem.Click += new System.EventHandler(this.cardViewToolStripMenuItem_Click);
             // 
             // gridViewToolStripMenuItem
             // 
             this.gridViewToolStripMenuItem.Name = "gridViewToolStripMenuItem";
-            this.gridViewToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gridViewToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.gridViewToolStripMenuItem.Text = "عرض جدولي";
             this.gridViewToolStripMenuItem.Click += new System.EventHandler(this.gridViewToolStripMenuItem_Click);
             // 
@@ -263,6 +263,7 @@
             this.gridViewMain.OptionsPrint.ExpandAllDetails = true;
             this.gridViewMain.OptionsPrint.PrintDetails = true;
             this.gridViewMain.OptionsPrint.PrintFilterInfo = true;
+            this.gridViewMain.OptionsView.ColumnAutoWidth = false;
             this.gridViewMain.OptionsView.EnableAppearanceEvenRow = true;
             this.gridViewMain.OptionsView.EnableAppearanceOddRow = true;
             this.gridViewMain.OptionsView.ShowFooter = true;
@@ -278,7 +279,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 0;
-            this.gridColumn5.Width = 220;
+            this.gridColumn5.Width = 237;
             // 
             // GCSanfName
             // 
@@ -291,7 +292,7 @@
             this.GCSanfName.Name = "GCSanfName";
             this.GCSanfName.Visible = true;
             this.GCSanfName.VisibleIndex = 1;
-            this.GCSanfName.Width = 208;
+            this.GCSanfName.Width = 130;
             // 
             // GCQuantity
             // 
@@ -306,7 +307,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
             this.GCQuantity.Visible = true;
             this.GCQuantity.VisibleIndex = 2;
-            this.GCQuantity.Width = 204;
+            this.GCQuantity.Width = 48;
             // 
             // GCPrice
             // 
@@ -321,7 +322,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
             this.GCPrice.Visible = true;
             this.GCPrice.VisibleIndex = 3;
-            this.GCPrice.Width = 224;
+            this.GCPrice.Width = 64;
             // 
             // GCStoreTrDate
             // 
@@ -335,7 +336,7 @@
             this.GCStoreTrDate.Name = "GCStoreTrDate";
             this.GCStoreTrDate.Visible = true;
             this.GCStoreTrDate.VisibleIndex = 4;
-            this.GCStoreTrDate.Width = 284;
+            this.GCStoreTrDate.Width = 84;
             // 
             // repositoryItemDateEdit1
             // 
@@ -415,6 +416,14 @@
             this.cardViewSells.OptionsPrint.PrintFilterInfo = true;
             this.cardViewSells.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
             // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "الاسم";
+            this.gridColumn6.FieldName = "EMPNAME";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 0;
+            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "اسم الصنف";
@@ -448,19 +457,22 @@
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
             // 
-            // gridColumn6
+            // btnPrint
             // 
-            this.gridColumn6.Caption = "الاسم";
-            this.gridColumn6.FieldName = "EMPNAME";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.Location = new System.Drawing.Point(504, 12);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(127, 23);
+            this.btnPrint.TabIndex = 9;
+            this.btnPrint.Text = "طباعة";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // QryStusellsFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 462);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.gridControlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QryStusellsFrm";
@@ -501,5 +513,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
     }
 }

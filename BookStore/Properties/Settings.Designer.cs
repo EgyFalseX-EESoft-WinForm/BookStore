@@ -23,19 +23,13 @@ namespace BookStore.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
-<SerializableConnectionString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
-  <ConnectionString>Data Source=.;Initial Catalog=schoolStore;Integrated Security=True</ConnectionString>
-  <ProviderName>System.Data.SqlClient</ProviderName>
-</SerializableConnectionString>")]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=schoolStore;Integrated Security=True")]
         public string schoolStoreConnectionString {
             get {
                 return ((string)(this["schoolStoreConnectionString"]));
-            }
-            set {
-                this["schoolStoreConnectionString"] = value;
             }
         }
     }

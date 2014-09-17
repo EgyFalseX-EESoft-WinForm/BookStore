@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QrysellsFrm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QrysellsTotalFrm));
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.CMS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +48,7 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             this.CMS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
@@ -58,19 +59,21 @@
             // 
             // gridControlMain
             // 
+            this.gridControlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlMain.ContextMenuStrip = this.CMS;
-            this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.Edit.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridControlMain.EmbeddedNavigator.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.gridControlMain.Location = new System.Drawing.Point(0, 0);
+            this.gridControlMain.Location = new System.Drawing.Point(0, 41);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1});
-            this.gridControlMain.Size = new System.Drawing.Size(643, 462);
+            this.gridControlMain.Size = new System.Drawing.Size(643, 421);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -86,13 +89,13 @@
             this.cardViewToolStripMenuItem,
             this.gridViewToolStripMenuItem});
             this.CMS.Name = "CMSPartnerStaff";
-            this.CMS.Size = new System.Drawing.Size(166, 120);
+            this.CMS.Size = new System.Drawing.Size(172, 98);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Image = global::BookStore.Properties.Resources.Refresh;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.refreshToolStripMenuItem.Text = "اعادة تحميل البيانات";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
@@ -100,26 +103,26 @@
             // 
             this.printToolStripMenuItem.Image = global::BookStore.Properties.Resources.Print;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.printToolStripMenuItem.Text = "طباعه";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(162, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(168, 6);
             // 
             // cardViewToolStripMenuItem
             // 
             this.cardViewToolStripMenuItem.Name = "cardViewToolStripMenuItem";
-            this.cardViewToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.cardViewToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.cardViewToolStripMenuItem.Text = "عرض كروت";
             this.cardViewToolStripMenuItem.Click += new System.EventHandler(this.cardViewToolStripMenuItem_Click);
             // 
             // gridViewToolStripMenuItem
             // 
             this.gridViewToolStripMenuItem.Name = "gridViewToolStripMenuItem";
-            this.gridViewToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.gridViewToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.gridViewToolStripMenuItem.Text = "عرض جدولي";
             this.gridViewToolStripMenuItem.Click += new System.EventHandler(this.gridViewToolStripMenuItem_Click);
             // 
@@ -268,7 +271,7 @@
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 0;
-            this.gridColumn24.Width = 205;
+            this.gridColumn24.Width = 208;
             // 
             // gridColumn25
             // 
@@ -308,7 +311,7 @@
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.Visible = true;
             this.gridColumn27.VisibleIndex = 3;
-            this.gridColumn27.Width = 165;
+            this.gridColumn27.Width = 132;
             // 
             // repositoryItemDateEdit1
             // 
@@ -401,14 +404,25 @@
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             // 
-            // QrysellsFrm
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.Location = new System.Drawing.Point(504, 12);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(127, 23);
+            this.btnPrint.TabIndex = 9;
+            this.btnPrint.Text = "طباعة";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // QrysellsTotalFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 462);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.gridControlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "QrysellsFrm";
+            this.Name = "QrysellsTotalFrm";
             this.Text = "استعلام المبيعات";
             this.Load += new System.EventHandler(this.QryPartnerStaffFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
@@ -441,5 +455,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
     }
 }

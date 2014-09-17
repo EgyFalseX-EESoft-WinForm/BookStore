@@ -70,9 +70,11 @@
             this.qryStusellsFrmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qry01ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qryspStudentBooksRequestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qry02ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xRep01ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xRep02ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xRep03ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permissionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prmEditorRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prmEditorRoleMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,7 +88,7 @@
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xRep03ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qry03ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEItems.Properties)).BeginInit();
@@ -275,7 +277,7 @@
             this.dataMortag3BillBarCodeFrmToolStripMenuItem});
             this.dataStoreToolStripMenuItem.Image = global::BookStore.Properties.Resources.editorStore;
             this.dataStoreToolStripMenuItem.Name = "dataStoreToolStripMenuItem";
-            this.dataStoreToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dataStoreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dataStoreToolStripMenuItem.Text = "بيانات المخازن";
             // 
             // editorSuppliersToolStripMenuItem
@@ -375,7 +377,7 @@
             this.constraintsDailyToolStripMenuItem});
             this.dataAccountToolStripMenuItem.Image = global::BookStore.Properties.Resources.banks;
             this.dataAccountToolStripMenuItem.Name = "dataAccountToolStripMenuItem";
-            this.dataAccountToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dataAccountToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dataAccountToolStripMenuItem.Text = "بيانات الحسابات";
             // 
             // accountsTypesToolStripMenuItem
@@ -402,7 +404,7 @@
             this.editEmpToolStripMenuItem});
             this.dataGeneralToolStripMenuItem.Image = global::BookStore.Properties.Resources.Code;
             this.dataGeneralToolStripMenuItem.Name = "dataGeneralToolStripMenuItem";
-            this.dataGeneralToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dataGeneralToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dataGeneralToolStripMenuItem.Text = "بيانات عامه";
             // 
             // editEmpToolStripMenuItem
@@ -424,7 +426,9 @@
             this.qryReservedsellsFrmToolStripMenuItem,
             this.qryStusellsFrmToolStripMenuItem,
             this.qry01ToolStripMenuItem,
-            this.qryspStudentBooksRequestsToolStripMenuItem});
+            this.qryspStudentBooksRequestsToolStripMenuItem,
+            this.qry02ToolStripMenuItem,
+            this.qry03ToolStripMenuItem});
             this.queryToolStripMenuItem.Image = global::BookStore.Properties.Resources.Queries;
             this.queryToolStripMenuItem.Name = "queryToolStripMenuItem";
             this.queryToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
@@ -435,7 +439,7 @@
             this.qrysellsFrmToolStripMenuItem.CheckOnClick = true;
             this.qrysellsFrmToolStripMenuItem.Image = global::BookStore.Properties.Resources.Qry;
             this.qrysellsFrmToolStripMenuItem.Name = "qrysellsFrmToolStripMenuItem";
-            this.qrysellsFrmToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.qrysellsFrmToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.qrysellsFrmToolStripMenuItem.Text = "استعلام المبيعات";
             this.qrysellsFrmToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -444,7 +448,7 @@
             this.qryQryBuysFrmToolStripMenuItem.CheckOnClick = true;
             this.qryQryBuysFrmToolStripMenuItem.Image = global::BookStore.Properties.Resources.Qry;
             this.qryQryBuysFrmToolStripMenuItem.Name = "qryQryBuysFrmToolStripMenuItem";
-            this.qryQryBuysFrmToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.qryQryBuysFrmToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.qryQryBuysFrmToolStripMenuItem.Text = "استعلام المشتريات";
             this.qryQryBuysFrmToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -453,7 +457,7 @@
             this.qryItemAvailabilityFrmToolStripMenuItem.CheckOnClick = true;
             this.qryItemAvailabilityFrmToolStripMenuItem.Image = global::BookStore.Properties.Resources.Qry;
             this.qryItemAvailabilityFrmToolStripMenuItem.Name = "qryItemAvailabilityFrmToolStripMenuItem";
-            this.qryItemAvailabilityFrmToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.qryItemAvailabilityFrmToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.qryItemAvailabilityFrmToolStripMenuItem.Text = "الاصناف في المخزن";
             this.qryItemAvailabilityFrmToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -462,7 +466,7 @@
             this.qryBarcodeFrmToolStripMenuItem.CheckOnClick = true;
             this.qryBarcodeFrmToolStripMenuItem.Image = global::BookStore.Properties.Resources.Qry;
             this.qryBarcodeFrmToolStripMenuItem.Name = "qryBarcodeFrmToolStripMenuItem";
-            this.qryBarcodeFrmToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.qryBarcodeFrmToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.qryBarcodeFrmToolStripMenuItem.Text = "طباعة الباركود";
             this.qryBarcodeFrmToolStripMenuItem.Visible = false;
             this.qryBarcodeFrmToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
@@ -472,7 +476,7 @@
             this.qryReservedsellsFrmToolStripMenuItem.CheckOnClick = true;
             this.qryReservedsellsFrmToolStripMenuItem.Image = global::BookStore.Properties.Resources.Qry;
             this.qryReservedsellsFrmToolStripMenuItem.Name = "qryReservedsellsFrmToolStripMenuItem";
-            this.qryReservedsellsFrmToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.qryReservedsellsFrmToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.qryReservedsellsFrmToolStripMenuItem.Text = "اصناف محجوزه و لم تصرف";
             this.qryReservedsellsFrmToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -481,7 +485,7 @@
             this.qryStusellsFrmToolStripMenuItem.CheckOnClick = true;
             this.qryStusellsFrmToolStripMenuItem.Image = global::BookStore.Properties.Resources.Qry;
             this.qryStusellsFrmToolStripMenuItem.Name = "qryStusellsFrmToolStripMenuItem";
-            this.qryStusellsFrmToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.qryStusellsFrmToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.qryStusellsFrmToolStripMenuItem.Text = "العهد المستديمة";
             this.qryStusellsFrmToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -490,7 +494,7 @@
             this.qry01ToolStripMenuItem.CheckOnClick = true;
             this.qry01ToolStripMenuItem.Image = global::BookStore.Properties.Resources.Qry;
             this.qry01ToolStripMenuItem.Name = "qry01ToolStripMenuItem";
-            this.qry01ToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.qry01ToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.qry01ToolStripMenuItem.Text = "كتب لم تسلم";
             this.qry01ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -499,9 +503,18 @@
             this.qryspStudentBooksRequestsToolStripMenuItem.CheckOnClick = true;
             this.qryspStudentBooksRequestsToolStripMenuItem.Image = global::BookStore.Properties.Resources.Qry;
             this.qryspStudentBooksRequestsToolStripMenuItem.Name = "qryspStudentBooksRequestsToolStripMenuItem";
-            this.qryspStudentBooksRequestsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.qryspStudentBooksRequestsToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
             this.qryspStudentBooksRequestsToolStripMenuItem.Text = "حالة الصرف للطالب";
             this.qryspStudentBooksRequestsToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            // 
+            // qry02ToolStripMenuItem
+            // 
+            this.qry02ToolStripMenuItem.CheckOnClick = true;
+            this.qry02ToolStripMenuItem.Image = global::BookStore.Properties.Resources.Qry;
+            this.qry02ToolStripMenuItem.Name = "qry02ToolStripMenuItem";
+            this.qry02ToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.qry02ToolStripMenuItem.Text = "استعلام المبيعات اجمالي";
+            this.qry02ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // printingToolStripMenuItem
             // 
@@ -531,6 +544,15 @@
             this.xRep02ToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.xRep02ToolStripMenuItem.Text = "اقرار استلام الكتب";
             this.xRep02ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            // 
+            // xRep03ToolStripMenuItem
+            // 
+            this.xRep03ToolStripMenuItem.CheckOnClick = true;
+            this.xRep03ToolStripMenuItem.Image = global::BookStore.Properties.Resources.Report;
+            this.xRep03ToolStripMenuItem.Name = "xRep03ToolStripMenuItem";
+            this.xRep03ToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.xRep03ToolStripMenuItem.Text = "اقرار استلام الكتب 2";
+            this.xRep03ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // permissionToolStripMenuItem
             // 
@@ -658,14 +680,14 @@
             this.aboutToolStripMenuItem.Text = "عن البرنامج";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
-            // xRep03ToolStripMenuItem
+            // qry03ToolStripMenuItem
             // 
-            this.xRep03ToolStripMenuItem.CheckOnClick = true;
-            this.xRep03ToolStripMenuItem.Image = global::BookStore.Properties.Resources.Report;
-            this.xRep03ToolStripMenuItem.Name = "xRep03ToolStripMenuItem";
-            this.xRep03ToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.xRep03ToolStripMenuItem.Text = "اقرار استلام الكتب 2";
-            this.xRep03ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            this.qry03ToolStripMenuItem.CheckOnClick = true;
+            this.qry03ToolStripMenuItem.Image = global::BookStore.Properties.Resources.Qry;
+            this.qry03ToolStripMenuItem.Name = "qry03ToolStripMenuItem";
+            this.qry03ToolStripMenuItem.Size = new System.Drawing.Size(249, 22);
+            this.qry03ToolStripMenuItem.Text = "استعلام المبيعات التصنيفات اجمالي";
+            this.qry03ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // EditorRoleMenuFrm
             // 
@@ -750,5 +772,7 @@
         private System.Windows.Forms.ToolStripMenuItem qry01ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qryspStudentBooksRequestsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xRep03ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem qry02ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem qry03ToolStripMenuItem;
     }
 }

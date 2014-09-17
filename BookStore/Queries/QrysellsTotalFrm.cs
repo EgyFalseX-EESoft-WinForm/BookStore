@@ -53,5 +53,10 @@ namespace BookStore
             gridControlMain.MainView = gridViewMain;
         }
         #endregion
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            gridControlMain.ShowRibbonPrintPreview();
+        }
     }
 }

@@ -16,12 +16,15 @@ namespace BookStore.XRep
         {
             cDCompanyTableAdapter.Fill(dsBookStoreQueries1.CDCompany);
             xRep01TableAdapter1.FillByStoreTrDate(dsBookStoreQueries1.XRep01, Convert.ToDateTime(e.ParametersInformation[0].Parameter.Value), Convert.ToDateTime(e.ParametersInformation[1].Parameter.Value));
-
-            if (dsBookStoreQueries1.CDCompany.Rows[0]["Logo"] != null)
+            try
             {
-                System.IO.MemoryStream ms = new System.IO.MemoryStream((byte[])dsBookStoreQueries1.CDCompany.Rows[0]["Logo"]);
-                xrPicLogo.Image = Image.FromStream(ms);
+                if (FXFW.SqlDB.IsNullOrEmpty(dsBookStoreQueries1.CDCompany.Rows[0]["Logo"]))
+                {
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream((byte[])dsBookStoreQueries1.CDCompany.Rows[0]["Logo"]);
+                    xrPicLogo.Image = Image.FromStream(ms);
+                }
             }
+            catch {            }
         }
 
     }

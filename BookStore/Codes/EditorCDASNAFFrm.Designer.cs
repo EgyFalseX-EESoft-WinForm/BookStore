@@ -75,6 +75,8 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
+            this.ceCanceled = new DevExpress.XtraEditors.CheckEdit();
+            this.ceCanceledEdit = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
             this.xtraTabPageAdd.SuspendLayout();
@@ -100,6 +102,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtSanfbarcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtEditReOrder.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtEditSanfName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceCanceled.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceCanceledEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControlMain
@@ -150,6 +154,7 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.ceCanceled);
             this.xtraTabPage1.Controls.Add(this.TVAddCat);
             this.xtraTabPage1.Controls.Add(this.TxtAddrem);
             this.xtraTabPage1.Controls.Add(this.LUEAddTagzeaUnit);
@@ -391,6 +396,7 @@
             // 
             // xtraTabPage4
             // 
+            this.xtraTabPage4.Controls.Add(this.ceCanceledEdit);
             this.xtraTabPage4.Controls.Add(this.TxtEditModelNo);
             this.xtraTabPage4.Controls.Add(this.labelControl13);
             this.xtraTabPage4.Controls.Add(this.TVEditCat);
@@ -565,6 +571,24 @@
             this.xtraTabPage6.Size = new System.Drawing.Size(521, 334);
             this.xtraTabPage6.Text = "ملخص حركه الصنف";
             // 
+            // ceCanceled
+            // 
+            this.ceCanceled.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ceCanceled.Location = new System.Drawing.Point(385, 213);
+            this.ceCanceled.Name = "ceCanceled";
+            this.ceCanceled.Properties.Caption = "ايقاف";
+            this.ceCanceled.Size = new System.Drawing.Size(62, 19);
+            this.ceCanceled.TabIndex = 6;
+            // 
+            // ceCanceledEdit
+            // 
+            this.ceCanceledEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ceCanceledEdit.Location = new System.Drawing.Point(371, 249);
+            this.ceCanceledEdit.Name = "ceCanceledEdit";
+            this.ceCanceledEdit.Properties.Caption = "ايقاف";
+            this.ceCanceledEdit.Size = new System.Drawing.Size(62, 19);
+            this.ceCanceledEdit.TabIndex = 6;
+            // 
             // EditorCDASNAFFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -601,6 +625,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtSanfbarcode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtEditReOrder.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtEditSanfName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceCanceled.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceCanceledEdit.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -652,5 +678,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.TextEdit TxtCount;
         private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.CheckEdit ceCanceled;
+        private DevExpress.XtraEditors.CheckEdit ceCanceledEdit;
     }
 }

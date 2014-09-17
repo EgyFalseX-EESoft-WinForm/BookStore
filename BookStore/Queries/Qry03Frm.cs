@@ -9,25 +9,30 @@ using DevExpress.XtraEditors;
 
 namespace BookStore
 {
-    public partial class Qrysp_StudentBooksRequests : DevExpress.XtraEditors.XtraForm
+    public partial class Qry03Frm : DevExpress.XtraEditors.XtraForm
     {
         #region -   Variables   -
         DataTable TblSells = new DataTable("FalseX2010-11");
         #endregion
         #region -   Functions   -
-        public Qrysp_StudentBooksRequests()
+        public Qry03Frm()
         {
             InitializeComponent();
+        }
+        private void LoadGridTbl()
+        {
+            // TODO: This line of code loads data into the 'dsBookStoreQueries.Qry03' table. You can move, or remove it, as needed.
+            this.qry03TableAdapter.Fill(this.dsBookStoreQueries.Qry03);
         }
         #endregion
         #region -   Event Handlers   -
         private void QryPartnerStaffFrm_Load(object sender, EventArgs e)
         {
-            sp_StudentBooksRequestsTableAdapter.Fill(dsBookStoreQueries.sp_StudentBooksRequests, Program.asase_code);
+            LoadGridTbl();
         }
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //LoadGridTbl();
+            LoadGridTbl();
         }
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -41,13 +46,12 @@ namespace BookStore
         {
             gridControlMain.MainView = gridViewMain;
         }
-        
-        #endregion
-
         private void btnPrint_Click(object sender, EventArgs e)
         {
             gridControlMain.ShowRibbonPrintPreview();
         }
+        #endregion
 
+        
     }
 }

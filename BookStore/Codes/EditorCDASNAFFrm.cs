@@ -113,6 +113,7 @@ namespace BookStore
             TxtAddReOrder.Text = "1";
             TxtAddModelNo.Text = string.Empty;
             TxtAddrem.Text = string.Empty;
+            ceCanceled.Checked = false;
             TVAddCat_AfterSelect(TVAddCat, new TreeViewEventArgs(new TreeNode()));
         }
         #endregion
@@ -163,14 +164,17 @@ namespace BookStore
                 ModelNo = string.Format("N'{0}'", TxtAddModelNo.Text);
             else
                 ModelNo = "NULL";
+
+            bool Canceled = ceCanceled.Checked;
+            
             SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
             SqlCommand cmd = new SqlCommand("", con);
             try
             {
                 con.Open();
-                cmd.CommandText = string.Format(@"INSERT INTO CDASNAF (SanfID, CategoryID, SanfName, CompanyID, TagzeaUnit, ReOrder, rem, Sanfbarcode, ModelNo)
-                VALUES ((Select Isnull(Max(SanfID) + 1, 1) From CDASNAF), {0}, N'{1}', {2}, {3}, {4}, {5}, N'{6}', {7})", TVAddCat.SelectedNode.Name, TxtAddSanfName.Text,
-                CDCompany, LUEAddTagzeaUnit.EditValue, ReOrder, rem, GetNewBarCode(TVAddCat.SelectedNode.Name), ModelNo);
+                cmd.CommandText = string.Format(@"INSERT INTO CDASNAF (SanfID, CategoryID, SanfName, CompanyID, TagzeaUnit, ReOrder, rem, Sanfbarcode, ModelNo, Canceled)
+                VALUES ((Select Isnull(Max(SanfID) + 1, 1) From CDASNAF), {0}, N'{1}', {2}, {3}, {4}, {5}, N'{6}', {7}, '{8}')", TVAddCat.SelectedNode.Name, TxtAddSanfName.Text,
+                CDCompany, LUEAddTagzeaUnit.EditValue, ReOrder, rem, GetNewBarCode(TVAddCat.SelectedNode.Name), ModelNo, Canceled);
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = string.Format(@"Insert Into TblPricelistdetailes (SanfID, priceout, Oldpriceout) VALUES
                 ((Select Max(SanfID) From CDASNAF), 0, 0)");
@@ -197,7 +201,7 @@ namespace BookStore
                 TxtEditModelNo.Text = string.Empty;
                 return;
             }
-            DataRow SanfDetailsRow = FXFW.SqlDB.LoadDataTable("Select SanfID, CategoryID, SanfName, CompanyID, TagzeaUnit, ReOrder, rem, Sanfbarcode, ModelNo From CDASNAF Where SanfID = " + TVEditCat.SelectedNode.Name).Rows[0];
+            DataRow SanfDetailsRow = FXFW.SqlDB.LoadDataTable("Select SanfID, CategoryID, SanfName, CompanyID, TagzeaUnit, ReOrder, rem, Sanfbarcode, ModelNo, Canceled From CDASNAF Where SanfID = " + TVEditCat.SelectedNode.Name).Rows[0];
             TxtEditSanfName.Text = SanfDetailsRow["SanfName"].ToString();
             LUEEditCDCompany.EditValue = SanfDetailsRow["CompanyID"];
             LUEEditTagzeaUnit.EditValue = SanfDetailsRow["TagzeaUnit"];
@@ -205,6 +209,7 @@ namespace BookStore
             TxtEditrem.Text = SanfDetailsRow["rem"].ToString();
             TxtSanfbarcode.Text = SanfDetailsRow["Sanfbarcode"].ToString();
             TxtEditModelNo.Text = SanfDetailsRow["ModelNo"].ToString();
+            ceCanceledEdit.EditValue = SanfDetailsRow["Canceled"];
         }
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
@@ -233,14 +238,15 @@ namespace BookStore
                 ModelNo = string.Format("N'{0}'", TxtEditModelNo.Text);
             else
                 ModelNo = "NULL";
+            bool Canceled = ceCanceledEdit.Checked;
             SqlConnection con = new SqlConnection(FXFW.SqlDB.SqlConStr);
             SqlCommand cmd = new SqlCommand("", con);
             try
             {
                 con.Open();
                 cmd.CommandText = string.Format(@"Update CDASNAF Set CategoryID = {0}, SanfName = N'{1}', CompanyID = {2}, TagzeaUnit = {3}, ReOrder = {4}, 
-                rem = {5}, ModelNo = {6} Where SanfID = {7} ", TVEditCat.SelectedNode.Parent.Name, TxtEditSanfName.Text,
-                CDCompany, LUEEditTagzeaUnit.EditValue, ReOrder, rem, ModelNo, TVEditCat.SelectedNode.Name);
+                rem = {5}, ModelNo = {6}, Canceled = '{7}' Where SanfID = {8} ", TVEditCat.SelectedNode.Parent.Name, TxtEditSanfName.Text,
+                CDCompany, LUEEditTagzeaUnit.EditValue, ReOrder, rem, ModelNo, Canceled, TVEditCat.SelectedNode.Name);
                 cmd.ExecuteNonQuery();
                 TVEditCat.SelectedNode.Text = TxtEditSanfName.Text;
                 Program.msg("تم التعديل", false, "", this);
