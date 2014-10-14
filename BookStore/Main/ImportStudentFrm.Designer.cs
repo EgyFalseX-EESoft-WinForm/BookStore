@@ -38,12 +38,14 @@
             this.openFileDialogDB = new System.Windows.Forms.OpenFileDialog();
             this.btnimport = new DevExpress.XtraEditors.SimpleButton();
             this.pbc = new DevExpress.XtraEditors.ProgressBarControl();
+            this.ceDoUpdate = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gcmain)).BeginInit();
             this.gcmain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbselectdb.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceDoUpdate.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gcmain
@@ -131,7 +133,7 @@
             this.btnimport.Location = new System.Drawing.Point(107, 160);
             this.btnimport.Name = "btnimport";
             this.btnimport.Size = new System.Drawing.Size(150, 23);
-            this.btnimport.TabIndex = 2;
+            this.btnimport.TabIndex = 3;
             this.btnimport.Text = "استيراد";
             this.btnimport.Click += new System.EventHandler(this.btnimport_Click);
             // 
@@ -146,11 +148,21 @@
             this.pbc.Size = new System.Drawing.Size(349, 18);
             this.pbc.TabIndex = 2;
             // 
+            // ceDoUpdate
+            // 
+            this.ceDoUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ceDoUpdate.Location = new System.Drawing.Point(263, 164);
+            this.ceDoUpdate.Name = "ceDoUpdate";
+            this.ceDoUpdate.Properties.Caption = "تحديث القديم";
+            this.ceDoUpdate.Size = new System.Drawing.Size(90, 19);
+            this.ceDoUpdate.TabIndex = 2;
+            // 
             // ImportStudentFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 188);
+            this.Controls.Add(this.ceDoUpdate);
             this.Controls.Add(this.pbc);
             this.Controls.Add(this.btnimport);
             this.Controls.Add(this.gcmain);
@@ -163,6 +175,7 @@
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbselectdb.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceDoUpdate.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -179,5 +192,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton btnimport;
         private DevExpress.XtraEditors.ProgressBarControl pbc;
+        private DevExpress.XtraEditors.CheckEdit ceDoUpdate;
     }
 }

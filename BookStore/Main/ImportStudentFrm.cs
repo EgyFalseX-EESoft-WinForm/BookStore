@@ -63,7 +63,28 @@ namespace BookStore
             SqlCommand cmd = new SqlCommand("", con);
             SqlTransaction trn = null;
             //Inserting Into Student
-            cmd.CommandText = @"IF NOT EXISTS(SELECT stu_code FROM student WHERE stu_code = @org_stu_code)
+            if (ceDoUpdate.Checked)
+            {
+                cmd.CommandText = @"IF NOT EXISTS(SELECT stu_code FROM student WHERE stu_code = @org_stu_code)
+                                INSERT INTO dbo.student
+                                ( stu_code ,
+                                  stu_name ,
+                                  waleaalkamr_mobile ,
+                                  entrystore ,
+                                  editstore
+                                )
+                        VALUES  ( @stu_code , -- stu_code - int
+                                  @stu_name , -- stu_name - nvarchar(50)
+                                  @waleaalkamr_mobile , -- waleaalkamr_mobile - nvarchar(50)
+                                  @entrystore , -- entrystore - bit
+                                  @editstore  -- editstore - bit 
+                                ) ELSE UPDATE dbo.student
+                                SET stu_name = @stu_name, waleaalkamr_mobile = @waleaalkamr_mobile, entrystore = @entrystore, editstore = @editstore
+                                WHERE stu_code =@org_stu_code ";
+            }
+            else
+            {
+                cmd.CommandText = @"IF NOT EXISTS(SELECT stu_code FROM student WHERE stu_code = @org_stu_code)
                                 INSERT INTO dbo.student
                                 ( stu_code ,
                                   stu_name ,
@@ -77,6 +98,8 @@ namespace BookStore
                                   @entrystore , -- entrystore - bit
                                   @editstore  -- editstore - bit 
                                 )";
+            }
+            
             cmd.Parameters.Add("@org_stu_code", System.Data.SqlDbType.Int);
             cmd.Parameters.Add("@stu_code", System.Data.SqlDbType.Int);
             cmd.Parameters.Add("@stu_name", System.Data.SqlDbType.NVarChar);
