@@ -144,7 +144,9 @@ namespace BookStore
                                   @asase_code , -- asase_code - int
                                   @alsofof_code , -- alsofof_code - int
                                   @fasl_code  -- fasl_code - int
-                                )";
+                                )
+                        ELSE
+                        UPDATE student_t SET alsofof_code = @alsofof_code, fasl_code = @fasl_code WHERE stu_code = @org_stu_code AND asase_code = @org_asase_code";
                 cmd.Parameters.Add("@org_stu_code", System.Data.SqlDbType.Int);
                 cmd.Parameters.Add("@org_asase_code", System.Data.SqlDbType.Int);
                 cmd.Parameters.Add("@stu_code", System.Data.SqlDbType.Int);
