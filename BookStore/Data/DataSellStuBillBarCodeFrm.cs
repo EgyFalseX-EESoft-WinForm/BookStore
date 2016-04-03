@@ -27,6 +27,7 @@ namespace BookStore
         DataTable ItemDetials = new DataTable();
         DataTable BillsTbl = new DataTable();
         DataTable BillsDetialTbl = new DataTable();
+        DataSources.dsBookStoreQueriesTableAdapters.QueriesTableAdapter adpQ = new DataSources.dsBookStoreQueriesTableAdapters.QueriesTableAdapter();
         #endregion
         #region -   Functions   -
         public DataSellStuBillBarCodeFrm()
@@ -745,8 +746,8 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
                 
                 // Print Bill Resit
                 ShowTotal();
-
-                XRep03 report = new XRep03(Convert.ToInt32(LUEPERSONID.EditValue), Convert.ToInt32(StoreTrID));
+                string Category = adpQ.Get_Sanf_Category(Convert.ToInt32(ItemDetials.Rows[0]["SanfID"]));
+                XRep03 report = new XRep03(Convert.ToInt32(LUEPERSONID.EditValue), Convert.ToInt32(StoreTrID), Category);
                 Program.ShowPrintPreview(report);
 
 //                XRepBillResit report = new XRepBillResit();
@@ -1023,7 +1024,10 @@ WHERE (STTRANSTYPEID = 2) AND (TRHEL = 'False') AND (NOT EXISTS
             //DataTable dt1 = (DataTable)gridControlEditDetails.DataSource;
             DataRow row = gridViewEdit.GetFocusedDataRow();
 
-            XRep03 report = new XRep03(Convert.ToInt32(row["PERSONID"]), Convert.ToInt32(row["StoreTrID"]));
+            DataTable dt = (DataTable)gridControlEditDetails.DataSource;
+            string Category = adpQ.Get_Sanf_Category(Convert.ToInt32(dt.Rows[0]["SanfID"]));
+
+            XRep03 report = new XRep03(Convert.ToInt32(row["PERSONID"]), Convert.ToInt32(row["StoreTrID"]), Category);
             Program.ShowPrintPreview(report);
 //            XRepBillResit report = new XRepBillResit();
 //            report.LoadDataSource(row["StoreTrID"].ToString());

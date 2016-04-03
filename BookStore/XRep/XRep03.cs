@@ -18,7 +18,7 @@ namespace BookStore.XRep
         {
             InitializeComponent();
         }
-        public XRep03(int StudentCode, int StoreTrID)
+        public XRep03(int StudentCode, int StoreTrID, string Cat)
         {
             InitializeComponent();
 
@@ -27,8 +27,7 @@ namespace BookStore.XRep
             pramPERSONID.Visible = false;
             pramPERSONID.Value = StudentCode;
             XRep02_ParametersRequestSubmit(new object(), null);
-            
-
+            xrlCategory.Text = Cat;
 
         }
         private void XRep02_ParametersRequestSubmit(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
@@ -57,7 +56,6 @@ namespace BookStore.XRep
             }
             
         }
-
         private void XRep02_ParametersRequestBeforeShow(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
         {
             foreach (ParameterInfo info in e.ParametersInformation)
@@ -83,7 +81,6 @@ namespace BookStore.XRep
 
             }
         }
-
         private void XRep03_DataSourceDemanded(object sender, EventArgs e)
         {
             

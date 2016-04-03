@@ -38,7 +38,7 @@ namespace BookStore
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            if (FXFW.SqlDB.LoadSqlDBPath("schoolStore") && Authentication())
+            if (FXFW.SqlDB.LoadSqlDBPath("schoolStore"))//&& Authentication()
             {
                 //FXFW.SqlDB.LoadSQLReports();
                 LoadAppSetting();
